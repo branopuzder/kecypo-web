@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <link rel="icon" href="../src/static/img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="stylesheet" href="./dist/style.css?v=2" />
     <title>KECY PO | Anglický letný camp</title>
     <meta name="title" content="KECY Camp PO | Anglický letný tábor" />
     <meta
@@ -26,6 +26,34 @@
     ></script>
   </head>
   <body>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v10.0",
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/sk_SK/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div
+      class="fb-customerchat"
+      attribution="biz_inbox"
+      page_id="215373245156131"
+    ></div>
+
     <div id="hero" class="h-screen flex flex-wrap content-center">
       <div class="kp-container text-white">
         <p class="uppercase text-xl block tracking-widest">
@@ -643,7 +671,7 @@
       </div>
     </div>
 
-    <div class="fixed bottom-10 right-8">
+    <div class="fixed bottom-10" id="div-button">
       <button
         id="menu-button"
         type="button"
