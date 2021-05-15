@@ -599,6 +599,10 @@ video {
   display: table;
 }
 
+.grid{
+  display: grid;
+}
+
 .flex-wrap{
   flex-wrap: wrap;
 }
@@ -615,8 +619,16 @@ video {
   align-content: center;
 }
 
+.justify-around{
+  justify-content: space-around;
+}
+
 .flex-1{
   flex: 1 1 0%;
+}
+
+.font-medium{
+  font-weight: 500;
 }
 
 .font-bold{
@@ -825,6 +837,10 @@ video {
   width: 100%;
 }
 
+.gap-6{
+  gap: 1.5rem;
+}
+
 .gap-8{
   gap: 2rem;
 }
@@ -897,6 +913,27 @@ video {
     -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
             animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
+}
+
+.filter{
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.brightness-0{
+  --tw-brightness: brightness(0);
+}
+
+.invert{
+  --tw-invert: invert(100%);
 }
 
 .filter-grayscale {
@@ -1243,6 +1280,10 @@ html {
   .md\:text-center{
     text-align: center;
   }
+
+  .md\:gap-12{
+    gap: 3rem;
+  }
 }
 
 @media (min-width: 1024px){
@@ -1260,6 +1301,10 @@ html {
 
   .lg\:flex{
     display: flex;
+  }
+
+  .lg\:gap-32{
+    gap: 8rem;
   }
 }
 
