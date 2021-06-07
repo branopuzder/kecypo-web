@@ -13,7 +13,7 @@
 }
 
 .kp-section-text {
-  @apply container text-2xl;
+  @apply container text-xl md:text-2xl;
 }
 
 .kp-section-row {
