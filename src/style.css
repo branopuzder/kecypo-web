@@ -36,6 +36,26 @@
   @apply focus:outline-none uppercase text-white text-xl py-3 px-8 hover:bg-kp-pink hover:shadow-lg block md:inline;
 }
 
+.kp-btn-block {
+  @apply block w-full;
+}
+
+.kp-event {
+  @apply bg-black transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
+}
+
+.kp-event-date {
+  @apply text-4xl font-medium whitespace-nowrap;
+}
+
+.kp-event-text {
+  @apply flex-grow;
+}
+
+.kp-club {
+  @apply bg-kp-red transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex mb-2 items-center gap-10;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -51,8 +71,16 @@ html {
   }
 }
 
+#hero-camp {
+  background-image: url("/src/static/img/camp/1.jpg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #hero {
-  background-image: url("/src/static/img/1.jpg");
+  background-image: url("/src/static/img/hero.jpg");
   background-color: #cccccc;
   background-position: center;
   background-repeat: no-repeat;
