@@ -49,7 +49,7 @@
 }
 
 .kp-event-text {
-  @apply flex-grow;
+  @apply flex-auto;
 }
 
 .kp-club {
