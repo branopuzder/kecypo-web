@@ -41,7 +41,7 @@
 }
 
 .kp-event {
-  @apply bg-black transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
+  @apply transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
 }
 
 .kp-event-date {
@@ -50,10 +50,6 @@
 
 .kp-event-text {
   @apply flex-auto;
-}
-
-.kp-club {
-  @apply bg-kp-red transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex mb-2 items-center gap-10;
 }
 
 html {
