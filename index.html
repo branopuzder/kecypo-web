@@ -10,7 +10,7 @@
             href="../src/static/img/favicon.png"
             type="image/x-icon"
         />
-        <link rel="stylesheet" href="./dist/style.css?v=10" />
+        <link rel="stylesheet" href="./dist/style.css?v=11" />
         <title>KECY PO | Anglický letný camp</title>
 
         <meta name="title" content="KECY Camp PO | Anglický letný tábor" />
@@ -30,7 +30,7 @@
             crossorigin="anonymous"
         ></script>
     </head>
-    <body>
+    <body class="text-kc-black">
         <!-- Messenger Chat Plugin Code -->
         <div id="fb-root"></div>
 
@@ -65,7 +65,7 @@
         </script>
 
         <div id="hero-camp" class="h-screen flex flex-wrap content-center">
-            <div class="kp-container text-white">
+            <div class="kp-container text-gray-100">
                 <p class="uppercase text-xl block tracking-widest">
                     English summer camp
                 </p>
@@ -83,70 +83,48 @@
             </div>
         </div>
 
-        <div class="bg-black py-32">
-            <div id="menu" class="kp-container text-white md:text-center">
+        <div class="bg-kc-black py-32">
+            <div id="menu" class="kp-container text-gray-100 md:text-center">
                 <h3 class="kp-section-header">Čo sa dozvieš</h3>
                 <div
-                    class="md:flex space-y-6 md:space-y-0 gap-10 items-center md:flex-wrap mt-10"
+                    class="md:flex space-y-6 md:space-y-0 gap-10 items-center md:flex-wrap mt-10 text-kc-yellow"
                 >
                     <div class="flex-1">
-                        <a
-                            href="#about"
-                            class="text-kp-purple-light text-xl font-bold"
+                        <a href="#about" class="text-xl font-bold"
                             >Čo sú KECY?</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#aboutmore"
-                            class="text-kp-yellow text-xl font-bold"
+                        <a href="#aboutmore" class="text-xl font-bold"
                             >Viac o campe</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#video"
-                            class="text-kp-orange text-xl font-bold"
-                            >Galéria</a
-                        >
+                        <a href="#video" class="text-xl font-bold">Galéria</a>
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#tracks"
-                            class="text-kp-purple-light text-xl font-bold"
-                            >Tracky</a
-                        >
+                        <a href="#tracks" class="text-xl font-bold">Tracky</a>
                     </div>
                     <div class="flex-1">
-                        <a href="#info" class="text-kp-blue text-xl font-bold"
-                            >Infošky</a
-                        >
+                        <a href="#info" class="text-xl font-bold">Infošky</a>
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#registration"
-                            class="text-kp-green text-xl font-bold"
+                        <a href="#registration" class="text-xl font-bold"
                             >Registrácia</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a href="#program" class="text-kp-red text-xl font-bold"
+                        <a href="#program" class="text-xl font-bold"
                             >Deň na campe</a
                         >
                     </div>
 
                     <div class="flex-1">
-                        <a
-                            href="#place"
-                            class="text-kp-purple-light text-xl font-bold"
-                            >Lokalita</a
-                        >
+                        <a href="#place" class="text-xl font-bold">Lokalita</a>
                     </div>
 
                     <div class="flex-1">
-                        <a
-                            href="#deeptalk"
-                            class="text-kp-yellow text-xl font-bold"
+                        <a href="#deeptalk" class="text-xl font-bold"
                             >Kto sme</a
                         >
                     </div>
@@ -154,7 +132,7 @@
             </div>
         </div>
 
-        <div id="about" class="bg-kp-yellow py-32">
+        <div id="about" class="bg-kc-yellow py-32">
             <div class="kp-container">
                 <div class="kp-section-row">
                     <div class="flex-1">
@@ -173,7 +151,7 @@
                         <img
                             src="./src/static/img/camp/group.jpg"
                             alt="Priatelia na turistike"
-                            class="kp-section-image border-black"
+                            class="kp-section-image--dark"
                             loading="lazy"
                         />
                     </div>
@@ -181,7 +159,7 @@
             </div>
         </div>
 
-        <div id="aboutmore" class="bg-kp-green py-32">
+        <div id="aboutmore" class="bg-kc-aqua py-32">
             <div class="kp-container">
                 <h3 class="kp-section-header">I still don't get it...</h3>
                 <p class="kp-section-text md:text-center">
@@ -190,14 +168,16 @@
                     KECY, toto je anglicko-športový camp.
                 </p>
                 <div
-                    class="lg:flex lg:space-x-10 lg:space-y-0 space-y-6 items-start mt-10"
+                    class="lg:grid lg:grid-cols-3 space-y-8 lg:space-y-0 lg:gap-10 mt-10"
                 >
-                    <div class="">
+                    <div
+                        class="border-8 border-kc-black py-10 px-6 text-center kp-animation"
+                    >
                         <h3 class="text-2xl font-bold">Kamoši z Prešova 🤝</h3>
                         <img
                             src="./src/static/img/camp/friends.jpg"
                             alt="Priatelia v náručí"
-                            class="w-full pt-4 pl-4 pb-4 my-6 pr-10 border-l-8 border-black object-scale-down filter-grayscale hover:filter-none"
+                            class="w-full my-6 px-8 object-scale-down"
                             loading="lazy"
                         />
                         <p class="kp-section-text">
@@ -206,12 +186,14 @@
                             môžeš aj po campe ostať v kontakte.
                         </p>
                     </div>
-                    <div class="">
+                    <div
+                        class="border-8 border-kc-black py-10 px-6 text-center kp-animation"
+                    >
                         <h3 class="text-2xl font-bold">Native speakers 🇺🇸</h3>
                         <img
                             src="./src/static/img/camp/usa.jpg"
                             alt="Priatelia z USA"
-                            class="w-full pt-4 pl-4 pb-4 my-6 pr-10 border-l-8 border-black object-scale-down filter-grayscale hover:filter-none"
+                            class="w-full my-6 px-8 object-scale-down"
                             loading="lazy"
                         />
                         <p class="kp-section-text">
@@ -221,12 +203,14 @@
                             angličtinou.
                         </p>
                     </div>
-                    <div class="">
+                    <div
+                        class="border-8 border-kc-black py-10 px-6 text-center kp-animation"
+                    >
                         <h3 class="text-2xl font-bold">Viac ako camp 🥾🕹️</h3>
                         <img
                             src="./src/static/img/camp/more_than_camp.jpg"
                             alt="Priateľské vzťahy medzi dievčatami"
-                            class="w-full pt-4 pl-4 pb-4 my-6 pr-10 border-l-8 border-black object-scale-down filter-grayscale hover:filter-none"
+                            class="w-full my-6 px-8 object-scale-down"
                             loading="lazy"
                         />
                         <p class="kp-section-text">
@@ -240,13 +224,13 @@
             </div>
         </div>
 
-        <div id="video" class="bg-black py-32">
-            <div class="kp-container text-white">
+        <div id="video" class="bg-kc-black py-32">
+            <div class="kp-container text-gray-100">
                 <h3 class="kp-section-header">
                     Lepšie vidieť, ako 100-krát čítať... Najlepšie zažiť
                 </h3>
                 <h4 class="text-2xl md:text-center mb-10">
-                    Pozri sa, ako nám bolo hééééj na campe...
+                    Pozri sa, ako nám bolo na campe...
                 </h4>
                 <div class="relative mb-24" style="padding-top: 56.25%">
                     <iframe
@@ -257,24 +241,24 @@
                         …
                     ></iframe>
                 </div>
-                <div class="md:grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <a
                         href="https://photos.app.goo.gl/tzKANWhjtifpP9ho8"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="kp-animation"
                     >
-                        <div class="bg-kp-yellow">
+                        <div class="p-4 bg-kc-green">
                             <img
                                 src="./src/static/img/g-2021.jpg"
                                 alt="Portrét chlapca"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
                             <div
-                                class="px-4 py-2 m-4 border-l-8 border-black text-black"
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
                             >
-                                <h4 class="text-3xl">Beyond | Moments</h4>
-                                <p class="text-xl">2021</p>
+                                <h4 class="text-xl">Beyond | Moments</h4>
+                                <p class="text-lg">2021</p>
                             </div>
                         </div>
                     </a>
@@ -282,19 +266,19 @@
                         href="https://photos.app.goo.gl/kLAartgi1teac78s7"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="kp-animation"
                     >
-                        <div class="bg-kp-green">
+                        <div class="p-4 bg-kc-blue">
                             <img
                                 src="./src/static/img/g-2021-g.jpg"
                                 alt="Portrét chlapca"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
                             <div
-                                class="px-4 py-2 m-4 border-l-8 border-black text-black"
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
                             >
-                                <h4 class="text-3xl">Beyond | Groups</h4>
-                                <p class="text-xl">2021</p>
+                                <h4 class="text-xl">Beyond | Groups</h4>
+                                <p class="text-lg">2021</p>
                             </div>
                         </div>
                     </a>
@@ -302,81 +286,88 @@
                         href="https://photos.app.goo.gl/VsWqmdirfV2qJeED7"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="kp-animation"
                     >
-                        <div class="bg-kp-pink">
+                        <div class="p-4 bg-kc-orange">
                             <img
                                 src="./src/static/img/camp/g-4.jpg"
                                 alt="Kamarátky"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
-                            <div class="px-4 py-2 m-4 border-l-4">
-                                <h4 class="text-3xl">Home</h4>
-                                <p class="text-xl">2019</p>
+                            <div
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
+                            >
+                                <h4 class="text-xl">Home</h4>
+                                <p class="text-lg">2019</p>
                             </div>
-                        </div></a
-                    >
+                        </div>
+                    </a>
                     <a
                         href="https://photos.app.goo.gl/GisYG47iQRp4Ag3R7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        ><div class="bg-kp-orange">
+                        class="kp-animation"
+                    >
+                        <div class="p-4 bg-kc-blue">
                             <img
                                 src="./src/static/img/camp/g-3.jpg"
                                 alt="Športová aktivita"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
-                            <div class="px-4 py-2 m-4 border-l-4">
-                                <h4 class="text-3xl">Reign Forever</h4>
-                                <p class="text-xl">2018</p>
+                            <div
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
+                            >
+                                <h4 class="text-xl">Reign Forever</h4>
+                                <p class="text-lg">2018</p>
                             </div>
-                        </div></a
-                    >
+                        </div>
+                    </a>
                     <a
                         href="https://photos.app.goo.gl/aDqcQfAtZ4UzUbU18"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="kp-animation"
                     >
-                        <div class="bg-kp-purple-light">
+                        <div class="p-4 bg-kc-orange">
                             <img
                                 src="./src/static/img/camp/g-2.jpg"
                                 alt="Kamaráti v lese"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
-                            <div class="px-4 py-2 m-4 border-l-4">
-                                <h4 class="text-3xl">Seen</h4>
-                                <p class="text-xl">2017</p>
+                            <div
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
+                            >
+                                <h4 class="text-xl">Seen</h4>
+                                <p class="text-lg">2017</p>
                             </div>
-                        </div></a
-                    >
+                        </div>
+                    </a>
 
                     <a
                         href="https://photos.app.goo.gl/7yiyoLsjCwyTS4CXA"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="kp-animation"
                     >
-                        <div class="bg-kp-blue">
+                        <div class="p-4 bg-kc-green">
                             <img
                                 src="./src/static/img/camp/g-1.jpg"
                                 alt="Kamaráti"
-                                class="filter-grayscale hover:filter-none"
                                 loading="lazy"
                             />
-                            <div class="px-4 py-2 m-4 border-l-4">
-                                <h4 class="text-3xl">
-                                    Did you get my message?
-                                </h4>
-                                <p class="text-xl">2016</p>
+                            <div
+                                class="px-4 py-2 mt-4 border-l-8 border-gray-100"
+                            >
+                                <h4 class="text-xl">Did you get my message?</h4>
+                                <p class="text-lg">2016</p>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        <div id="tracks" class="bg-kp-blue py-32">
-            <div class="kp-container text-white">
+        <div id="tracks" class="bg-kc-blue py-32">
+            <div class="kp-container text-gray-100">
                 <div class="md:text-center">
                     <h3 class="kp-section-header">Camp šitý na teba</h3>
                     <p class="kp-section-text mb-6">
@@ -396,21 +387,21 @@
                     </p>
                 </div>
                 <div
-                    class="md:flex md:space-x-10 md:space-y-0 space-y-6 text-center"
+                    class="md:flex md:space-x-10 md:space-y-0 space-y-6 text-center text-gray-100"
                 >
                     <div
-                        class="flex-1 bg-black text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-1 cursor-pointer"
+                        class="flex-1 border-8 border-gray-100 kp-animation cursor-pointer p-4"
                     >
                         <img
                             src="./src/static/img/camp/track_sport.jpg"
                             alt="Chlapec hadzajúci Frisbee"
-                            class="w-full object-scale-down filter-grayscale hover:filter-none focus:filter-none"
+                            class="w-full object-scale-down"
                             loading="lazy"
                         />
                         <div
-                            class="divide-y-4 divide-kp-blue space-y-4 px-6 lg:px-16 pb-8 pt-8 md:pt-14"
+                            class="divide-y-4 space-y-4 px-6 lg:px-16 pb-8 pt-8 md:pt-14"
                         >
-                            <h4 class="text-3xl font-bold">Sport Track 🥏</h4>
+                            <h4 class="text-2xl font-bold">Sport Track 🥏</h4>
                             <p class="kp-section-text pt-4">
                                 Som neposedný/-á a behať, cvičiť ma baví. Či už
                                 si k športu nikdy nemal blízko alebo sa ho
@@ -420,18 +411,18 @@
                         </div>
                     </div>
                     <div
-                        class="flex-1 bg-black text-white shadow-lg hover:shadow-2xl transform hover:-translate-y-1 cursor-pointer"
+                        class="flex-1 border-8 border-gray-100 kp-animation cursor-pointer p-4"
                     >
                         <img
                             src="./src/static/img/camp/track_english.jpg"
                             alt="Hry a zápas medzi kamarátmi"
-                            class="w-full object-scale-down filter-grayscale hover:filter-none focus:filter-none"
+                            class="w-full object-scale-down"
                             loading="lazy"
                         />
                         <div
-                            class="divide-y-4 divide-kp-blue space-y-4 px-6 lg:px-16 pb-8 pt-8 md:pt-14"
+                            class="divide-y-4 space-y-4 px-6 lg:px-16 pb-8 pt-8 md:pt-14"
                         >
-                            <h4 class="text-3xl font-bold">English Track 🍍</h4>
+                            <h4 class="text-2xl font-bold">English Track 🍍</h4>
                             <p class="kp-section-text pt-4">
                                 Chcem viac rozprávať po anglicky. Naučiť sa nové
                                 veci a kecať pritom po anglicky o Amerike,
@@ -445,30 +436,34 @@
             </div>
         </div>
 
-        <div id="info" class="bg-black py-32 relative">
-            <div class="kp-container text-white md:text-center">
+        <div id="info" class="bg-kc-black py-32 relative">
+            <div class="kp-container text-gray-100 md:text-center">
                 <h3 class="kp-section-header">Infošky o campe</h3>
                 <div class="kp-section-row-start mt-10">
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-6">Dátum</h3>
-                        <p class="kp-section-text font-bold">3-9.7.2022</p>
+                        <h3 class="text-3xl font-bold mb-2 md:mb-6">Dátum</h3>
+                        <p class="text-2xl font-bold">3-9.7.2022</p>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-6">Cena</h3>
-                        <p class="kp-section-text font-bold">149 €</p>
+                        <h3 class="text-3xl font-bold mb-2 md:mb-6">Cena</h3>
+                        <p class="text-2xl font-bold">149 €</p>
                         <p class="kp-section-text">
                             Zvýhodnená cena platí pre prvých 30 registrovaných,
                             potom 159 €.
                         </p>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-6">Lokalita</h3>
-                        <p class="kp-section-text font-bold">
+                        <h3 class="text-3xl font-bold mb-2 md:mb-6">
+                            Lokalita
+                        </h3>
+                        <p class="text-2xl font-bold">
                             Horský hotel Canyon, Lipovce
                         </p>
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-6">Registrácia</h3>
+                        <h3 class="text-3xl font-bold mb-2 md:mb-6">
+                            Registrácia
+                        </h3>
                         <a
                             href="#registration"
                             class="kp-btn-outline text-center"
@@ -479,8 +474,8 @@
             </div>
         </div>
 
-        <div id="registration" class="bg-kp-orange py-32">
-            <div class="kp-container text-white">
+        <div id="registration" class="bg-kc-orange py-32">
+            <div class="kp-container text-gray-100">
                 <div class="kp-section-row">
                     <div class="flex-1">
                         <h3 class="kp-section-header">Registrácia</h3>
@@ -506,7 +501,7 @@
                                 >camp@kecypo.sk</a
                             >
                         </p>
-                        <p class="kp-section-text mb-6">
+                        <p class="kp-section-text mb-10">
                             V súvislosti s ochorením COVID-19 ti garantujeme
                             plné vrátenie peňazí, ak by si sa pred campom
                             dostal/-a do karantény a nemohol/-a nastúpiť na camp
@@ -517,7 +512,7 @@
                                 href="https://www.emsreg.eu/public_otm/events/11020/registrations/landing_page?group_id=9162"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="kp-btn bg-kp-blue"
+                                class="focus:outline-none uppercase tracking-wider text-gray-100 text-xl py-3 px-8 bg-kc-black hover:bg-kc-blue block md:inline"
                                 >Registrovať sa</a
                             >
                         </div>
@@ -534,8 +529,8 @@
             </div>
         </div>
 
-        <div id="program" class="bg-black py-32">
-            <div class="kp-container text-white">
+        <div id="program" class="bg-kc-green py-32">
+            <div class="kp-container text-gray-100">
                 <div class="kp-section-row">
                     <div class="flex-1">
                         <h3 class="kp-section-header">Deň na campe</h3>
@@ -600,8 +595,8 @@
             </div>
         </div>
 
-        <div id="place" class="bg-kp-blue py-32">
-            <div class="kp-container text-white">
+        <div id="place" class="bg-kc-blue py-32">
+            <div class="kp-container text-gray-100">
                 <div class="kp-section-row">
                     <div class="flex-1">
                         <h3 class="kp-section-header">Ubytovanie</h3>
@@ -627,8 +622,8 @@
                 </div>
             </div>
         </div>
-        <div id="deeptalk" class="bg-kp-purple py-32">
-            <div class="kp-container text-white">
+        <div id="deeptalk" class="bg-kc-aqua py-32">
+            <div class="kp-container">
                 <div class="kp-section-row">
                     <div class="flex-1">
                         <h3 class="kp-section-header">Nebojíme sa hĺbky</h3>
@@ -649,7 +644,7 @@
                         <img
                             src="./src/static/img/camp/deep_talk.jpg"
                             alt="Priatelia hrajúci na gitare"
-                            class="kp-section-image"
+                            class="kp-section-image--dark"
                             loading="lazy"
                         />
                     </div>
@@ -657,7 +652,7 @@
             </div>
         </div>
 
-        <div class="bg-kp-green py-32">
+        <div class="bg-kc-yellow py-32">
             <div class="kp-container">
                 <div class="kp-section-row">
                     <div class="flex-1">
@@ -667,17 +662,17 @@
                             Ak ti niečo stále vrtá hlavou, píš nám! My kecáme
                             radi.
                         </p>
-                        <div class="text-center space-y-6">
+                        <div class="md:flex justify-center gap-6 text-center">
                             <a
                                 href="mailto:camp@kecypo.sk"
-                                class="kp-btn bg-black md:mr-6"
-                                >Mailík</a
+                                class="flex-1 kp-btn bg-kc-black mb-6 md:mb-0"
+                                >Mail</a
                             >
                             <a
                                 href="https://m.me/kecypo"
                                 target="_blank"
-                                class="kp-btn bg-black"
-                                >Messengerík</a
+                                class="flex-1 kp-btn bg-kc-black"
+                                >Messenger</a
                             >
                         </div>
                     </div>
@@ -685,7 +680,7 @@
                         <img
                             src="./src/static/img/camp/contact.jpg"
                             alt="Kamaráti hrajúci volejbal"
-                            class="kp-section-image border-black"
+                            class="kp-section-image--dark"
                             loading="lazy"
                         />
                     </div>
@@ -693,7 +688,7 @@
             </div>
         </div>
 
-        <div id="social" class="bg-kp-yellow py-32">
+        <div id="social" class="bg-kc-orange py-32">
             <div class="kp-container md:text-center">
                 <h3 class="kp-section-header">Si v tom s nami?</h3>
                 <p class="kp-section-text">
@@ -701,7 +696,9 @@
                     neušiel ti žiaden event. Chceme ti ukázať, ako pripravujeme
                     camp. Si in?
                 </p>
-                <div class="kp-section-row-start md:flex-wrap mt-10">
+                <div
+                    class="kp-section-row-start md:flex-wrap mt-10 text-center"
+                >
                     <div class="flex-1">
                         <a
                             href="https://www.instagram.com/kecypo/"
@@ -754,15 +751,15 @@
             </div>
         </div>
 
-        <div id="social" class="bg-black pt-32 pb-8">
-            <div class="kp-container md:text-center text-white">
+        <div id="social" class="bg-kc-black pt-32 pb-8">
+            <div class="kp-container md:text-center text-gray-100">
                 <h3 class="kp-section-header">Vďaka za pomoc</h3>
                 <p class="kp-section-text">
                     Bez týchto organizácií by sme camp nemohli organizovať.
                     Ďakujeme za pomoc 😊
                 </p>
                 <div
-                    class="grid grid-cols-2 lg:flex items-center justify-around gap-6 md:gap-12 xl:gap-32 mt-10"
+                    class="grid grid-cols-2 lg:flex items-center justify-center gap-6 md:gap-12 xl:gap-32 mt-10"
                 >
                     <div class="flex-1">
                         <a
@@ -773,7 +770,7 @@
                             <img
                                 src="./src/static/logo/relevant.png"
                                 alt="Logo Relevant n.o."
-                                class="filter brightness-0 invert w-36"
+                                class="filter brightness-0 invert w-36 mx-auto"
                                 loading="lazy"
                             />
                         </a>
@@ -787,7 +784,7 @@
                             <img
                                 src="./src/static/logo/tc-kompas.png"
                                 alt="Logo TC Kompas"
-                                class="filter brightness-0 invert w-36"
+                                class="filter brightness-0 invert w-36 mx-auto"
                                 loading="lazy"
                             />
                         </a>
@@ -801,7 +798,7 @@
                             <img
                                 src="./src/static/logo/josiahventure.png"
                                 alt="Logo JosiahVenture"
-                                class="filter brightness-0 invert w-36"
+                                class="filter brightness-0 invert w-36 mx-auto"
                                 loading="lazy"
                             />
                         </a>
@@ -815,7 +812,7 @@
                             <img
                                 src="./src/static/logo/ecav.png"
                                 alt="Logo Vertical Life Church"
-                                class="filter brightness-0 invert w-36"
+                                class="filter brightness-0 invert w-36 mx-auto"
                                 loading="lazy"
                             />
                         </a>
@@ -824,69 +821,47 @@
             </div>
         </div>
 
-        <div class="bg-black pb-32 pt-10">
-            <div class="kp-container text-white md:text-center">
+        <div class="bg-kc-black pb-32 pt-10">
+            <div class="kp-container text-gray-100 md:text-center">
                 <div
-                    class="md:flex space-y-6 md:space-y-0 gap-10 items-center md:flex-wrap mt-10"
+                    class="md:flex space-y-6 md:space-y-0 gap-10 items-center md:flex-wrap mt-10 text-kc-aqua"
                 >
                     <div class="flex-1">
-                        <a
-                            href="#about"
-                            class="text-kp-purple-light text-xl font-bold"
+                        <a href="#about" class="text-xl font-bold"
                             >Čo sú KECY?</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#aboutmore"
-                            class="text-kp-yellow text-xl font-bold"
+                        <a href="#aboutmore" class="text-xl font-bold"
                             >Viac o campe</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#video"
-                            class="text-kp-orange text-xl font-bold"
-                            >Galéria</a
-                        >
+                        <a href="#video" class="text-xl font-bold">Galéria</a>
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#tracks"
-                            class="text-kp-purple-light text-xl font-bold"
-                            >Tracky</a
-                        >
+                        <a href="#tracks" class="text-xl font-bold">Tracky</a>
                     </div>
                     <div class="flex-1">
-                        <a href="#info" class="text-kp-blue text-xl font-bold"
-                            >Infošky</a
-                        >
+                        <a href="#info" class="text-xl font-bold">Infošky</a>
                     </div>
                     <div class="flex-1">
-                        <a
-                            href="#registration"
-                            class="text-kp-green text-xl font-bold"
+                        <a href="#registration" class="text-xl font-bold"
                             >Registrácia</a
                         >
                     </div>
                     <div class="flex-1">
-                        <a href="#program" class="text-kp-red text-xl font-bold"
+                        <a href="#program" class="text-xl font-bold"
                             >Deň na campe</a
                         >
                     </div>
 
                     <div class="flex-1">
-                        <a
-                            href="#place"
-                            class="text-kp-purple-light text-xl font-bold"
-                            >Lokalita</a
-                        >
+                        <a href="#place" class="text-xl font-bold">Lokalita</a>
                     </div>
 
                     <div class="flex-1">
-                        <a
-                            href="#deeptalk"
-                            class="text-kp-yellow text-xl font-bold"
+                        <a href="#deeptalk" class="text-xl font-bold"
                             >Kto sme</a
                         >
                     </div>
@@ -904,7 +879,7 @@
                 id="menu-button"
                 type="button"
                 onclick="location.href='#menu';"
-                class="bg-blue-900 text-white"
+                class="bg-blue-900 text-gray-100"
             >
                 <i class="fas fa-bars fa-2x"></i>
             </button>
