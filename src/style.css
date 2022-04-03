@@ -5,93 +5,93 @@
 @tailwind utilities;
 
 .kp-container {
-  @apply container mx-auto px-6;
+    @apply container mx-auto px-6;
 }
 
 .kp-section-header {
-  @apply container text-4xl md:text-6xl font-bold mb-8 md:text-center;
+    @apply container text-xl md:text-3xl font-bold mb-8 md:text-center;
 }
 
 .kp-section-text {
-  @apply container text-xl md:text-2xl;
+    @apply container text-base md:text-lg;
 }
 
 .kp-section-row {
-  @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-center;
+    @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-center;
 }
 
 .kp-section-row-start {
-  @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-start;
+    @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-start;
 }
 
 .kp-section-image {
-  @apply w-full border-l-8 border-t-8 pl-4 pt-4 object-scale-down filter-grayscale hover:filter-none focus:filter-none;
+    @apply w-full border-l-8 border-t-8 pl-4 pt-4 object-scale-down filter-grayscale hover:filter-none focus:filter-none;
 }
 
 .kp-btn-outline {
-  @apply focus:outline-none uppercase text-xl py-3 px-8 border hover:border-kp-pink hover:bg-kp-pink hover:text-white block md:inline;
+    @apply focus:outline-none uppercase text-xl py-3 px-8 border hover:border-kp-pink hover:bg-kp-pink hover:text-white block md:inline;
 }
 
 .kp-btn {
-  @apply focus:outline-none uppercase text-white text-xl py-3 px-8 hover:bg-kp-pink hover:shadow-lg block md:inline;
+    @apply focus:outline-none uppercase text-white text-xl py-3 px-8 hover:bg-kp-pink hover:shadow-lg block md:inline;
 }
 
 .kp-btn-block {
-  @apply block w-full;
+    @apply block w-full;
 }
 
 .kp-event {
-  @apply transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
+    @apply transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
 }
 
 .kp-event-date {
-  @apply text-4xl font-medium whitespace-nowrap;
+    @apply text-4xl font-medium whitespace-nowrap;
 }
 
 .kp-event-text {
-  @apply flex-auto;
+    @apply flex-auto;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 @layer utilities {
-  @variants focus, hover {
-    .filter-none {
-      filter: none;
+    @variants focus, hover {
+        .filter-none {
+            filter: none;
+        }
+        .filter-grayscale {
+            filter: grayscale(100%);
+        }
     }
-    .filter-grayscale {
-      filter: grayscale(100%);
-    }
-  }
 }
 
 #hero-camp {
-  background-image: url("/src/static/img/camp/1.jpg");
-  background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/src/static/img/camp/1.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #hero {
-  background-image: url("/src/static/img/hero.jpg");
-  background-color: #cccccc;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/src/static/img/hero.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #menu-button {
-  height: 60px;
-  width: 60px;
-  z-index: 9999;
-  border-radius: 50%;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 3px 3px 3px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
+    height: 60px;
+    width: 60px;
+    z-index: 9999;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 3px 3px 3px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
 #div-button {
-  right: 92px;
+    right: 92px;
 }
