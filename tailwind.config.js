@@ -1,6 +1,6 @@
 module.exports = {
     purge: {
-        enabled: false,
+        enabled: true,
         content: ["./*.html"],
     },
     darkMode: false, // or 'media' or 'class'
@@ -8,7 +8,7 @@ module.exports = {
         extend: {
             colors: {
                 "kc-black": {
-                    DEFAULT: "#3B3B3B",
+                    DEFAULT: "#202020",
                 },
                 "kc-aqua": {
                     DEFAULT: "#8bbee0",

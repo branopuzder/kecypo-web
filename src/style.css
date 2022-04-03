@@ -9,7 +9,7 @@
 }
 
 .kp-section-header {
-    @apply container text-xl md:text-3xl font-bold mb-8 md:text-center;
+    @apply container text-2xl md:text-3xl font-bold mb-8 md:text-center;
 }
 
 .kp-section-text {
@@ -17,7 +17,7 @@
 }
 
 .kp-section-row {
-    @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-center;
+    @apply md:flex md:space-x-10 md:space-y-0 space-y-10 items-center;
 }
 
 .kp-section-row-start {
@@ -25,15 +25,22 @@
 }
 
 .kp-section-image {
-    @apply w-full border-l-8 border-t-8 pl-4 pt-4 object-scale-down filter-grayscale hover:filter-none focus:filter-none;
+    @apply w-full border-8 border-gray-100 p-4 object-scale-down shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+}
+.kp-section-image--dark {
+    @apply w-full border-8 border-kc-black p-4 object-scale-down shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+}
+
+.kp-animation {
+    @apply shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
 }
 
 .kp-btn-outline {
-    @apply focus:outline-none uppercase text-xl py-3 px-8 border hover:border-kp-pink hover:bg-kp-pink hover:text-white block md:inline;
+    @apply focus:outline-none uppercase tracking-wider text-xl py-3 px-8 border hover:border-kc-orange hover:bg-kc-orange hover:text-gray-100 block md:inline-block shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
 }
 
 .kp-btn {
-    @apply focus:outline-none uppercase text-white text-xl py-3 px-8 hover:bg-kp-pink hover:shadow-lg block md:inline;
+    @apply focus:outline-none uppercase tracking-wider text-gray-100 text-xl py-3 px-8 hover:bg-kc-orange block md:inline-block shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
 }
 
 .kp-btn-block {
