@@ -1,12 +1,30 @@
 module.exports = {
     purge: {
-        enabled: true,
+        enabled: false,
         content: ["./*.html"],
     },
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
+                "kc-black": {
+                    DEFAULT: "#3B3B3B",
+                },
+                "kc-aqua": {
+                    DEFAULT: "#8bbee0",
+                },
+                "kc-blue": {
+                    DEFAULT: "#2e2c72",
+                },
+                "kc-green": {
+                    DEFAULT: "#008e8c",
+                },
+                "kc-orange": {
+                    DEFAULT: "#f47c25",
+                },
+                "kc-yellow": {
+                    DEFAULT: "#ffd553",
+                },
                 "kp-purple": {
                     DEFAULT: "#5C1D6B",
                 },
