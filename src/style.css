@@ -47,18 +47,6 @@
     @apply block w-full;
 }
 
-.kp-event {
-    @apply transition hover:bg-white text-white hover:text-black hover:shadow-lg border-l-4 px-9 py-4 flex flex-wrap mb-2 items-center gap-x-10 gap-y-2;
-}
-
-.kp-event-date {
-    @apply text-4xl font-medium whitespace-nowrap;
-}
-
-.kp-event-text {
-    @apply flex-auto;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -76,14 +64,6 @@ html {
 
 #hero-camp {
     background-image: url("/src/static/img/camp/1.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#hero {
-    background-image: url("/src/static/img/hero.jpg");
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
