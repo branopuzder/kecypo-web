@@ -9,7 +9,7 @@
 }
 
 .kp-section-header {
-    @apply container text-2xl md:text-3xl font-bold mb-8 md:text-center;
+    @apply container mb-8 text-3xl font-bold md:text-center;
 }
 
 .kp-section-text {
@@ -17,30 +17,30 @@
 }
 
 .kp-section-row {
-    @apply md:flex md:space-x-10 md:space-y-0 space-y-10 items-center;
+    @apply items-center space-y-10 md:flex md:space-x-10 md:space-y-0;
 }
 
 .kp-section-row-start {
-    @apply md:flex md:space-x-10 md:space-y-0 space-y-6 items-start;
+    @apply items-start space-y-6 md:flex md:space-x-10 md:space-y-0;
 }
 
 .kp-section-image {
-    @apply w-full border-8 border-gray-100 p-4 object-scale-down shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+    @apply w-full transform border-8 border-gray-100 object-scale-down p-4 shadow-lg hover:-translate-y-1 hover:shadow-2xl;
 }
 .kp-section-image--dark {
-    @apply w-full border-8 border-kc-black p-4 object-scale-down shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+    @apply w-full transform border-8 border-kc-black object-scale-down p-4 shadow-lg hover:-translate-y-1 hover:shadow-2xl;
 }
 
 .kp-animation {
-    @apply shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+    @apply transform shadow-lg hover:-translate-y-1 hover:shadow-2xl;
 }
 
 .kp-btn-outline {
-    @apply focus:outline-none uppercase tracking-wider text-xl py-3 px-8 border hover:border-kc-orange hover:bg-kc-orange hover:text-gray-100 block md:inline-block shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+    @apply focus:outline-none block transform border py-3 px-8 text-xl uppercase tracking-wider shadow-lg hover:-translate-y-1 hover:border-kc-orange hover:bg-kc-orange hover:text-gray-100 hover:shadow-2xl md:inline-block;
 }
 
 .kp-btn {
-    @apply focus:outline-none uppercase tracking-wider text-gray-100 text-xl py-3 px-8 hover:bg-kc-orange block md:inline-block shadow-lg hover:shadow-2xl transform hover:-translate-y-1;
+    @apply focus:outline-none block transform py-3 px-8 text-xl uppercase tracking-wider text-gray-100 shadow-lg hover:-translate-y-1 hover:bg-kc-orange hover:shadow-2xl md:inline-block;
 }
 
 .kp-btn-block {
