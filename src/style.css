@@ -36,11 +36,11 @@
 }
 
 .kp-btn-outline {
-    @apply focus:outline-none block transform border py-3 px-8 text-xl uppercase tracking-wider shadow-lg hover:-translate-y-1 hover:border-kc-orange hover:bg-kc-orange hover:text-gray-100 hover:shadow-2xl md:inline-block;
+    @apply focus:outline-none block transform border rounded-3xl py-3 px-8 text-xl uppercase tracking-wider shadow-lg  hover:bg-gray-100 hover:text-gray-700 hover:shadow-2xl md:inline-block;
 }
 
 .kp-btn {
-    @apply focus:outline-none block transform py-3 px-8 text-xl uppercase tracking-wider text-gray-100 shadow-lg hover:-translate-y-1 hover:bg-kc-orange hover:shadow-2xl md:inline-block;
+    @apply focus:outline-none block transform rounded-3xl py-3 px-8 text-xl uppercase tracking-wider text-gray-100 shadow-lg  hover:bg-black hover:text-white hover:shadow-2xl md:inline-block;
 }
 
 .kp-btn-block {
@@ -63,7 +63,7 @@ html {
 }
 
 #hero-camp {
-    background-image: url("/src/static/img/camp/1.jpg");
+    background-image: url("/src/static/img/camp/hero.jpg");
     background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
