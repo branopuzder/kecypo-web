@@ -29,7 +29,7 @@
     <nav 
       x-data="{ scrolled: false }"
       @scroll.window="scrolled = window.scrollY > 50"
-      :class="scrolled ? 'bg-zinc-900/95 backdrop-blur-lg shadow-2xl' : 'bg-transparent'"
+      :class="scrolled ? 'bg-zinc-900/75 border-b border-zinc-800 hover:border-pink-500/20 backdrop-blur-lg shadow-2xl' : 'bg-transparent border-transparent'"
       class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +112,7 @@
   <!-- Content -->
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
     <div>
-      <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase text-cyan-400 mb-6 drop-shadow-[0_2px_10px_rgba(34,211,238,0.5)]">
+      <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase mb-6 drop-shadow-[0_2px_10px_rgba(34,211,238,0.5)]">
         English Summer Camp 2025
       </p>
       
@@ -199,18 +199,16 @@
                 je to začiatok niečoho väčšieho.
               </p>
               
-              <p class="text-pink-500 font-semibold text-xl">
-                Vidíme sa v lete! ☀️🏝️
-              </p>
+          
             </div>
             
             <div class="mt-8 flex flex-wrap gap-4">
               <div class="stat-badge">
-                <span class="text-3xl font-black text-pink-500">11</span>
+                <span class="text-3xl font-black text-pink-500">23</span>
                 <span class="text-sm text-zinc-400">rokov tradície</span>
               </div>
               <div class="stat-badge">
-                <span class="text-3xl font-black text-purple-500">200+</span>
+                <span class="text-3xl font-black text-purple-500">800+</span>
                 <span class="text-sm text-zinc-400">spokojných kemperov</span>
               </div>
               <div class="stat-badge">
@@ -378,8 +376,8 @@
         </div>
         
         <div class="text-center mb-10">
-          <h3 class="text-3xl font-bold mb-4">Galérie z uplynulých rokov</h3>
-          <p class="text-zinc-400">Memories that last forever 📸</p>
+          <h3 class="text-3xl font-bold mb-4">Memories that last forever 📸</h3>
+          <p class="text-zinc-400">Galérie z uplynulých rokov</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
@@ -761,11 +759,24 @@
             </div>
             
             <div class="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 rounded-xl p-6 mb-8">
-              <p class="text-zinc-300 leading-relaxed">
+              <p class="text-zinc-300 leading-relaxed mb-4">
                 <strong class="text-pink-500">💡 Real talk:</strong> Ak by bola pre teba 
                 cena prekážkou, určite sa nám ozvi. Vieme ponúknuť štipendium a radi 
                 niečo vymyslíme. Nechceme, aby si kvôli financiám ostal doma!
-              </p>
+                    </p>
+                  <div class="flex items-center gap-4 text-sm text-zinc-400">
+
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-envelope"></i>
+                  <div>Ozvi sa
+
+                    <a href="mailto:vanes.kakascikova@gmail.com" class="hover:text-pink-500 transition-colors">
+                      vanes.kakascikova@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
             </div>
             
             <div class="space-y-4">
@@ -779,14 +790,7 @@
                 <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
               </a>
               
-              <div class="flex items-center gap-4 text-sm text-zinc-400">
-                <div class="flex items-center gap-2">
-                  <i class="fas fa-envelope"></i>
-                  <a href="mailto:vanes.kakascikova@gmail.com" class="hover:text-pink-500 transition-colors">
-                    vanes.kakascikova@gmail.com
-                  </a>
-                </div>
-              </div>
+            
             </div>
           </div>
           
@@ -914,7 +918,7 @@
             </div>
             
             <h2 class="section-heading mb-6">
-              Kde sa to celé odohráva?
+              Kde to bude?
             </h2>
             
             <p class="text-lg text-zinc-300 leading-relaxed mb-8">
@@ -926,7 +930,7 @@
             <p class="text-lg text-zinc-300 leading-relaxed mb-8">
               <span class="text-cyan-500 font-semibold">Perfect spot pre všetky naše 
               activities</span> – od táborových games cez športovanie až po chill 
-              momenty v prírode. Už teraz sa nevieme dočkať! 🌲⛰️v
+              momenty v prírode. Už teraz sa nevieme dočkať! 🌲⛰️
             </p>
             
             <div class="grid grid-cols-2 gap-4">
@@ -985,7 +989,7 @@
           
           <div>
             <h2 class="section-heading mb-6">
-              Nebojíme sa ísť do <span class="text-gradient">hĺbky</span>
+              Nebojíme sa <span class="text-gradient">hĺbky</span>
             </h2>
             
             <div class="space-y-4 text-lg text-zinc-300 leading-relaxed">
@@ -1137,11 +1141,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            Veľká vďaka! 🙏
+            Veľká vďaka!
           </h2>
           <p class="text-xl text-zinc-300">
             Bez podpory týchto organizácií by sme camp vôbec nedokázali zrealizovať. 
-            Ešte raz ďakujeme! 😊
+            Ešte raz ďakujeme! 🙏
           </p>
         </div>
         
@@ -1217,10 +1221,7 @@
           </a>
         </div>
       </div>
-    </section>
-
-<section class="py-16 bg-gradient-to-b from-zinc-950 to-black">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center">
       <div class="inline-block mb-4 px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-full">
         <span class="text-zinc-400 font-bold text-sm uppercase tracking-wider">📍 Kto camp organizuje</span>
@@ -1248,6 +1249,10 @@
       </div>
     </div>
   </div>
+    </section>
+
+<!-- <section class="py-16 bg-gradient-to-b from-zinc-950 to-black"> -->
+  
 </section>
 
 <footer class="py-12 bg-black border-t border-zinc-900">
