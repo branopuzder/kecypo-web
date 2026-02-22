@@ -59,12 +59,18 @@
     @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 text-center hover:border-pink-500/30 hover:scale-105 transition-all duration-300;
   }
 
+  /* Gallery Item - FIXED: removed 'group' from @apply */
   .gallery-item {
-    @apply relative rounded-xl overflow-hidden group block;
+    @apply relative rounded-xl overflow-hidden block;
   }
 
   .gallery-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white;
+    @apply absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent opacity-0 transition-opacity duration-300 flex items-center justify-center text-white;
+  }
+
+  /* Show overlay on parent hover */
+  .gallery-item:hover .gallery-overlay {
+    @apply opacity-100;
   }
 
   /* Effects */
