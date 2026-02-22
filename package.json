@@ -1,19 +1,22 @@
 {
-  "name": "web",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "kecy-camp-web",
+  "version": "2.0.0",
+  "description": "KECY Camp - English Summer Camp for High School Students",
+  "type": "module",
   "scripts": {
-    "tailwind:build": "tailwindcss build ./src/style.css -c ./tailwind.config.js -o ./dist/style.css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "prettier": "^2.6.2",
-    "prettier-plugin-tailwindcss": "^0.1.8",
-    "tailwindcss": "^2.2.19"
+    "@tailwindcss/vite": "^4.0.0-alpha.25",
+    "vite": "^5.4.0",
+    "tailwindcss": "^4.0.0-alpha.25",
+    "autoprefixer": "^10.4.20",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.1"
   }
 }
