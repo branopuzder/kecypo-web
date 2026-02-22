@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
-/* Custom Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
+/* Custom theme configuration */
 @theme {
   /* Custom Colors */
   --color-kc-blue: #2e2c72;
   --color-kc-green: #008e8c;
   
-  /* Custom Font Family */
-  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+  /* Font Family */
+  --font-family-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Custom Animations */
+  --animate-gradient: gradient 8s ease infinite;
+  --animate-blob: blob 7s infinite;
+  --animate-float: float 3s ease-in-out infinite;
 }
 
-/* Base Styles */
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Base Layer */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -20,90 +26,222 @@
   }
 
   body {
-    @apply antialiased;
-    font-feature-settings: "cv11", "ss01";
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    @apply bg-pink-500/30 text-white;
+    background-color: rgb(236 72 153 / 0.3);
+    color: white;
   }
 }
 
-/* Component Styles */
+/* Components Layer */
 @layer components {
   /* Navigation */
   .nav-link {
-    @apply text-zinc-300 hover:text-pink-500 transition-colors duration-300 font-medium;
+    color: rgb(212 212 216);
+    transition: color 0.3s;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    color: rgb(236 72 153);
   }
 
   /* Buttons */
   .btn-primary {
-    @apply inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:shadow-2xl hover:shadow-pink-500/50 hover:scale-105 transition-all duration-300;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, rgb(236 72 153), rgb(168 85 247));
+    color: white;
+    font-weight: 700;
+    border-radius: 9999px;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgb(236 72 153 / 0.5);
   }
 
   .btn-secondary {
-    @apply inline-block px-8 py-4 bg-zinc-800 border border-zinc-700 text-white font-bold rounded-full hover:bg-zinc-700 hover:border-pink-500/50 hover:scale-105 transition-all duration-300;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: rgb(39 39 42);
+    border: 1px solid rgb(63 63 70);
+    color: white;
+    font-weight: 700;
+    border-radius: 9999px;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgb(63 63 70);
+    border-color: rgb(236 72 153 / 0.5);
+    transform: scale(1.05);
   }
 
   /* Cards */
   .glass-card {
-    @apply bg-zinc-900/50 backdrop-blur-xl border border-zinc-800 rounded-2xl;
+    background-color: rgb(24 24 27 / 0.5);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgb(39 39 42);
+    border-radius: 1rem;
   }
 
   .feature-card {
-    @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 hover:border-pink-500/30 transition-all duration-500;
+    background-color: rgb(24 24 27 / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(39 39 42);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.5s;
+  }
+
+  .feature-card:hover {
+    border-color: rgb(236 72 153 / 0.3);
   }
 
   .track-card {
-    @apply bg-zinc-900/80 backdrop-blur-sm border-2 border-zinc-800 rounded-2xl p-8 hover:border-pink-500/50 hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-500;
+    background-color: rgb(24 24 27 / 0.8);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgb(39 39 42);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.5s;
+  }
+
+  .track-card:hover {
+    border-color: rgb(236 72 153 / 0.5);
+    box-shadow: 0 25px 50px -12px rgb(236 72 153 / 0.2);
   }
 
   .info-card {
-    @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-8 hover:border-pink-500/30 hover:scale-105 transition-all duration-300;
+    background-color: rgb(24 24 27 / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(39 39 42);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .info-card:hover {
+    border-color: rgb(236 72 153 / 0.3);
+    transform: scale(1.05);
   }
 
   .social-card {
-    @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-8 text-center hover:border-pink-500/30 hover:scale-105 transition-all duration-300;
+    background-color: rgb(24 24 27 / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(39 39 42);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .social-card:hover {
+    border-color: rgb(236 72 153 / 0.3);
+    transform: scale(1.05);
   }
 
   .gallery-item {
-    @apply relative rounded-xl overflow-hidden group block;
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: block;
   }
 
   .gallery-overlay {
-    @apply absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgb(9 9 11), rgb(9 9 11 / 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
   }
 
   /* Effects */
   .hover-lift {
-    @apply transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    transition: transform 0.5s, box-shadow 0.5s;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, rgb(236 72 153), rgb(168 85 247), rgb(6 182 212));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   /* Typography */
   .section-heading {
-    @apply text-4xl md:text-5xl lg:text-6xl font-black leading-tight;
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-heading {
+      font-size: 3.75rem;
+    }
   }
 
   /* Badges */
   .stat-badge {
-    @apply bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 flex flex-col items-center;
+    background-color: rgb(24 24 27 / 0.5);
+    border: 1px solid rgb(39 39 42);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .pill {
-    @apply inline-block px-3 py-1 bg-zinc-800 border border-zinc-700 rounded-full text-sm text-zinc-300;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgb(39 39 42);
+    border: 1px solid rgb(63 63 70);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: rgb(212 212 216);
   }
 
   /* Partner Logos */
   .partner-logo {
-    @apply flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .partner-logo:hover {
+    transform: scale(1.1);
   }
 }
 
-/* Utilities */
+/* Utilities Layer */
 @layer utilities {
   .animation-delay-1000 {
     animation-delay: 1s;
@@ -168,13 +306,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-zinc-950;
+  background-color: rgb(9 9 11);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-zinc-800 rounded-full;
+  background-color: rgb(39 39 42);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-zinc-700;
+  background-color: rgb(63 63 70);
 }
