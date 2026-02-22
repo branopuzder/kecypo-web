@@ -10,7 +10,7 @@
     <meta name="title" content="KECY Camp PO | Anglický letný tábor 2025" />
     <meta
       name="description"
-      content="Anglický letný camp pre stredoškolákov z Prešova. Real talk s native speakers, nové friendships a nezabudnuteľné zážitky. 20.-26. júla 2025."
+      content="Anglický letný camp pre stredoškolákov z Prešova. Skutočná angličtina s native speakers, nové kamošstvá a nezabudnuteľné zážitky. 20.-26. júla 2025."
     />
     <meta
       name="keywords"
@@ -19,16 +19,13 @@
     
     <link rel="icon" href="../src/static/img/camp/favicon.png" type="image/x-icon" />
     
-    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/bfc4cd05e5.js" crossorigin="anonymous"></script>
     
-    <!-- Vite Entry Point -->
     <script type="module" src="/src/main.js"></script>
   </head>
   
   <body class="bg-zinc-950 text-white antialiased" x-data="{ menuOpen: false }">
     
-    <!-- Floating Navigation -->
     <nav 
       x-data="{ scrolled: false }"
       @scroll.window="scrolled = window.scrollY > 50"
@@ -37,12 +34,10 @@
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20">
-          <!-- Logo -->
           <a href="#" class="text-2xl sm:text-3xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
             KECY
           </a>
           
-          <!-- Desktop Menu -->
           <div class="hidden lg:flex items-center gap-8">
             <a href="#about" class="nav-link">O campe</a>
             <a href="#tracks" class="nav-link">Tracky</a>
@@ -51,7 +46,6 @@
             <a href="#registration" class="btn-primary">Chcem sa registrovať! 🚀</a>
           </div>
           
-          <!-- Mobile Menu Button -->
           <button 
             @click="menuOpen = !menuOpen"
             class="lg:hidden relative w-10 h-10 text-white focus:outline-none"
@@ -76,7 +70,6 @@
         </div>
       </div>
       
-      <!-- Mobile Menu -->
       <div 
         x-show="menuOpen"
         x-transition:enter="transition ease-out duration-200"
@@ -100,9 +93,7 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- Background Image with Overlay -->
       <div class="absolute inset-0 z-0">
         <img 
           src="./src/static/img/camp/hero.jpg" 
@@ -112,10 +103,8 @@
         <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/40 to-zinc-950"></div>
       </div>
       
-      <!-- Animated gradient overlay -->
       <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20 mix-blend-overlay animate-gradient"></div>
       
-      <!-- Content -->
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
         <div>
           <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase text-cyan-400 mb-4 animate-pulse">
@@ -133,7 +122,7 @@
           
           <p class="text-lg sm:text-2xl text-zinc-300 max-w-3xl mx-auto mb-12 leading-relaxed">
             Letný camp, kde sa baví, učí a žije naplno.<br/>
-            <span class="text-pink-500 font-semibold">Real talk, real friendships, real vibes. 🔥</span>
+            <span class="text-pink-500 font-semibold">Skvelí ľudia, real talk a brutálna atmoška. 🔥</span>
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -143,11 +132,10 @@
             </a>
             <a href="#video" class="btn-secondary text-lg group">
               <i class="fas fa-play mr-2 group-hover:scale-110 transition-transform inline-block"></i>
-              Check aftermovie
+              Pozri aftermovie
             </a>
           </div>
           
-          <!-- Quick Info Cards -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
             <div class="glass-card p-6 text-center hover-lift">
               <div class="text-3xl mb-2">📅</div>
@@ -168,13 +156,11 @@
         </div>
       </div>
       
-      <!-- Scroll Indicator -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <i class="fas fa-chevron-down text-2xl text-white/50"></i>
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-24 lg:py-32 bg-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -195,13 +181,13 @@
               </p>
               
               <p>
-                Okrem angličtiny ťa čaká fitness, volejbal, nové friendships a 
+                Okrem angličtiny ťa čaká fitness, volejbal, nové kamošstvá a 
                 momenty, ktoré ti zostanú v hlave navždy. Nie je to len camp – 
-                je to začiatok niečoho bigger.
+                je to začiatok niečoho väčšieho.
               </p>
               
               <p class="text-pink-500 font-semibold text-xl">
-                Can't wait to see you there! ☀️🏝️
+                Vidíme sa v lete! ☀️🏝️
               </p>
             </div>
             
@@ -212,7 +198,7 @@
               </div>
               <div class="stat-badge">
                 <span class="text-3xl font-black text-purple-500">200+</span>
-                <span class="text-sm text-zinc-400">happy campers</span>
+                <span class="text-sm text-zinc-400">spokojných kemperov</span>
               </div>
               <div class="stat-badge">
                 <span class="text-3xl font-black text-cyan-500">3</span>
@@ -232,13 +218,12 @@
               <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
             </div>
             
-            <!-- Floating element -->
             <div class="absolute -bottom-6 -left-6 glass-card p-6 max-w-xs hidden lg:block hover-lift">
               <div class="flex items-center gap-4">
                 <div class="text-4xl">🇺🇸</div>
                 <div>
                   <div class="font-bold text-lg">Native Speakers</div>
-                  <div class="text-sm text-zinc-400">Real American experience</div>
+                  <div class="text-sm text-zinc-400">Pravá americká angličtina</div>
                 </div>
               </div>
             </div>
@@ -247,21 +232,19 @@
       </div>
     </section>
 
-    <!-- Why Different Section -->
     <section id="aboutmore" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            Čím sme vlastne iní?
+            V čom sme iní?
           </h2>
           <p class="text-xl text-zinc-300 max-w-3xl mx-auto">
-            Už chápeš, že KECY Camp nie je len random letný tábor? 
-            Tu je zopár vecí, ktoré nás robia <span class="text-gradient font-semibold">unique</span>.
+            Už asi chápeš, že KECY Camp nie je len random letný tábor. 
+            Tu je zopár vecí, ktoré z campu robia <span class="text-gradient font-semibold">niečo výnimočné</span>.
           </p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
           <div class="feature-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -277,17 +260,16 @@
             </div>
             
             <h3 class="text-2xl font-bold mb-4 group-hover:text-pink-500 transition-colors">
-              Lokálna comunity
+              Lokálna komunita
             </h3>
             
             <p class="text-zinc-400 leading-relaxed">
-              Nerobíme camp pre celé Slovensko. Sme focused na Prešov. To znamená, 
+              Nerobíme camp pre celé Slovensko. Sme zameraní na Prešov a okolie. To znamená, 
               že tu spoznáš ľudí z tvojho mesta, s ktorými môžeš ostať v kontakte 
-              aj po campe. Real connections, not just random follows.
+              aj po campe. Skutočné priateľstvá, nielen random follows na Instagrame.
             </p>
           </div>
           
-          <!-- Card 2 -->
           <div class="feature-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -309,11 +291,10 @@
             <p class="text-zinc-400 leading-relaxed">
               "Wait, you actually understand me?!" Yep, a dokonca ťa pochopí aj Američan! 
               Chceme ti ukázať, že angličtina nie je žiaden rocket science. Príď si 
-              vycheckovať real talk s native speakermi a zisti, že na to máš.
+              vyskúšať skutočnú konverzáciu s native speakermi a zisti, že na to máš.
             </p>
           </div>
           
-          <!-- Card 3 -->
           <div class="feature-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -329,21 +310,20 @@
             </div>
             
             <h3 class="text-2xl font-bold mb-4 group-hover:text-cyan-500 transition-colors">
-              It's more than a camp
+              Viac než len tábor
             </h3>
             
             <p class="text-zinc-400 leading-relaxed">
-              Camp nie je len týždeň. Je to start niečoho väčšieho. Cez leto sa 
-              stretávame na tripoch, hikoch, alebo len tak na zmrzline. Vždy sa 
-              môžeš pripojiť. Preto robíme camp na začiatku leta – aby sme mali 
-              čas na ďalšie adventures!
+              Camp nie je len na týždeň. Je to začiatok niečoho väčšieho. Cez leto sa 
+              stretávame na výletoch, túrach alebo len tak na zmrzline. Vždy sa 
+              môžeš pridať. Preto robíme camp na začiatku leta – aby sme mali 
+              čas na ďalšie spoločné akcie!
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Video & Gallery Section -->
     <section id="video" class="py-24 lg:py-32 bg-zinc-900" x-data="{ showAllGalleries: false }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -352,11 +332,10 @@
             <span class="text-gradient block">Best to experience!</span>
           </h2>
           <p class="text-xl text-zinc-300">
-            Check out how it looks like at KECY Camp...
+            Pozri si, ako to na KECY campe vyzerá naživo...
           </p>
         </div>
         
-        <!-- Featured Videos -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
           <div class="relative rounded-2xl overflow-hidden hover-lift">
             <div class="aspect-video">
@@ -385,15 +364,12 @@
           </div>
         </div>
         
-        <!-- Gallery Header -->
         <div class="text-center mb-10">
           <h3 class="text-3xl font-bold mb-4">Galérie z uplynulých rokov</h3>
           <p class="text-zinc-400">Memories that last forever 📸</p>
         </div>
 
-        <!-- Recent Galleries (Always Visible) -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-          <!-- 2024 -->
           <a href="https://photos.app.goo.gl/8DDDGWLRWxUenrE67" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2024.jpg" alt="Camp 2024" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -404,7 +380,6 @@
             </div>
           </a>
           
-          <!-- 2023 -->
           <a href="https://photos.app.goo.gl/pqVEhDU2aseyonU19" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2023.jpg" alt="Camp 2023" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -415,7 +390,6 @@
             </div>
           </a>
           
-          <!-- 2023 Groups -->
           <a href="https://photos.app.goo.gl/FeYBrU3srL8y71Xi9" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2023-g.jpg" alt="Camp 2023 Groups" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -426,7 +400,6 @@
             </div>
           </a>
           
-          <!-- 2022 -->
           <a href="https://photos.app.goo.gl/7qEG9oyH35JSs14Q9" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2022.jpg" alt="Camp 2022" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -438,7 +411,6 @@
           </a>
         </div>
 
-        <!-- Expandable Older Galleries -->
         <div 
           x-show="showAllGalleries"
           x-transition:enter="transition ease-out duration-500"
@@ -447,7 +419,6 @@
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8"
           style="display: none;"
         >
-          <!-- 2022 Groups -->
           <a href="https://photos.app.goo.gl/T5vdiEnd3mmzbLmi6" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2022-g.jpg" alt="Camp 2022 Groups" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -458,7 +429,6 @@
             </div>
           </a>
 
-          <!-- 2021 -->
           <a href="https://photos.app.goo.gl/tzKANWhjtifpP9ho8" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2021.jpg" alt="Camp 2021" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -469,7 +439,6 @@
             </div>
           </a>
 
-          <!-- 2021 Groups -->
           <a href="https://photos.app.goo.gl/kLAartgi1teac78s7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2021-g.jpg" alt="Camp 2021 Groups" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -480,7 +449,6 @@
             </div>
           </a>
 
-          <!-- 2019 -->
           <a href="https://photos.app.goo.gl/VsWqmdirfV2qJeED7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-4.jpg" alt="Camp 2019" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -491,7 +459,6 @@
             </div>
           </a>
 
-          <!-- 2018 -->
           <a href="https://photos.app.goo.gl/GisYG47iQRp4Ag3R7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-3.jpg" alt="Camp 2018" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -502,7 +469,6 @@
             </div>
           </a>
 
-          <!-- 2017 -->
           <a href="https://photos.app.goo.gl/aDqcQfAtZ4UzUbU18" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-2.jpg" alt="Camp 2017" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -513,7 +479,6 @@
             </div>
           </a>
 
-          <!-- 2016 -->
           <a href="https://photos.app.goo.gl/7yiyoLsjCwyTS4CXA" target="_blank" rel="noopener noreferrer" class="gallery-item group">
             <img src="./src/static/img/camp/g-1.jpg" alt="Camp 2016" class="w-full h-48 object-cover" loading="lazy" />
             <div class="gallery-overlay">
@@ -525,13 +490,12 @@
           </a>
         </div>
 
-        <!-- Toggle Button -->
         <div class="text-center">
           <button
             @click="showAllGalleries = !showAllGalleries"
             class="inline-flex items-center gap-3 px-8 py-4 bg-zinc-800 border border-zinc-700 text-white font-bold rounded-full hover:bg-zinc-700 hover:border-pink-500/50 hover:scale-105 transition-all duration-300"
           >
-            <span x-text="showAllGalleries ? 'Show less' : 'Pozri všetky galérie (11 rokov!)'"></span>
+            <span x-text="showAllGalleries ? 'Zobraziť menej' : 'Pozri všetky galérie'"></span>
             <i class="fas fa-chevron-down transition-transform duration-300" :class="showAllGalleries ? 'rotate-180' : ''"></i>
           </button>
           <p class="text-zinc-400 mt-4 text-sm">
@@ -540,10 +504,9 @@
           </p>
         </div>
 
-        <!-- Stats Section -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 p-8 bg-zinc-950/50 rounded-2xl border border-zinc-800">
           <div class="text-center">
-            <div class="text-4xl font-black text-pink-500 mb-2">11</div>
+            <div class="text-4xl font-black text-pink-500 mb-2">23</div>
             <div class="text-sm text-zinc-400">Rokov campu</div>
           </div>
           <div class="text-center">
@@ -552,19 +515,17 @@
           </div>
           <div class="text-center">
             <div class="text-4xl font-black text-cyan-500 mb-2">1000+</div>
-            <div class="text-sm text-zinc-400">Memories</div>
+            <div class="text-sm text-zinc-400">Spomienok</div>
           </div>
           <div class="text-center">
             <div class="text-4xl font-black text-pink-500 mb-2">∞</div>
-            <div class="text-sm text-zinc-400">Friendships</div>
+            <div class="text-sm text-zinc-400">Priateľstiev</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tracks Section -->
     <section id="tracks" class="py-24 lg:py-32 bg-gradient-to-br from-pink-600/10 via-purple-600/10 to-cyan-600/10 relative overflow-hidden">
-      <!-- Animated background -->
       <div class="absolute inset-0 opacity-30">
         <div class="absolute top-0 left-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl animate-blob"></div>
         <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
@@ -574,21 +535,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            Camp tailored for <span class="text-gradient">YOU</span>
+            Vyber si track, ktorý <span class="text-gradient">ťa baví</span>
           </h2>
           <p class="text-xl text-zinc-300 max-w-4xl mx-auto mb-6">
-            Tento camp je naozaj pre teba. No cap! 💯 Môžeš si vybrať, ako strávíš 
-            svoje doobedie – angličtina s native speakers, fitness training, alebo 
-            volejbalový vibe.
+            Tento camp si do veľkej miery skladáš ty sám. Môžeš si vybrať, ako stráviš 
+            svoje doobedie – či to bude angličtina s native speakers, fitness tréning alebo volejbal.
           </p>
           <p class="text-zinc-400 max-w-3xl mx-auto">
-            Don't stress o tom, či si expert alebo beginner. 
-            <span class="text-pink-500 font-semibold">Choose what vibes with you.</span>
+            Nerieš, či si profík alebo začiatočník. 
+            <span class="text-pink-500 font-semibold">Vyber si to, do čoho máš najväčšiu chuť.</span>
           </p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- Fitness Track -->
           <div class="track-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -624,7 +583,6 @@
             </div>
           </div>
           
-          <!-- English Track -->
           <div class="track-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -647,12 +605,12 @@
               <p class="text-zinc-300 leading-relaxed">
                 Chceš viac rozprávať po anglicky a zlepšiť sa? Tento track je 
                 o konverzácii, aktivitách a hrách, ktoré posunú tvoju English 
-                na vyšší level. Či si pro alebo začínajúci, nájdeš tu svoje miesto. 
+                na vyšší level. Či si pro alebo začínajúci, nájdeš si tu svoje miesto. 
                 Let's talk!
               </p>
               
               <div class="flex flex-wrap gap-2 pt-4">
-                <span class="pill">🗣️ Konverza</span>
+                <span class="pill">🗣️ Conversations</span>
                 <span class="pill">🇺🇸 Natives</span>
                 <span class="pill">🎭 Activities</span>
                 <span class="pill">🎮 Games</span>
@@ -660,7 +618,6 @@
             </div>
           </div>
 
-          <!-- Volleyball Track -->
           <div class="track-card group">
             <div class="relative overflow-hidden rounded-xl mb-6">
               <img 
@@ -681,9 +638,9 @@
               </h3>
               
               <p class="text-zinc-300 leading-relaxed">
-                Máš v sebe športového ducha a láska k team sports? Volejbal je 
-                presne to, čo hľadáš! Budeš trénovať, hrať a hlavne sa zabaviť. 
-                Nie sme profi team, ale vibe bude fire a určite sa posunieme! 🔥
+                Máš v sebe športového ducha a baví ťa hrať v tíme? Volejbal je 
+                presne to, čo hľadáš! Budeme trénovať, hrať a hlavne sa zabávať. 
+                Nie sme profi tím, ale atmosféra bude top a určite sa posunieš! 🔥
               </p>
               
               <div class="flex flex-wrap gap-2 pt-4">
@@ -698,17 +655,15 @@
       </div>
     </section>
 
-    <!-- Info Section -->
     <section id="info" class="py-24 lg:py-32 bg-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            All the info you need
+            Základné info
           </h2>
         </div>
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Date -->
           <div class="info-card">
             <div class="text-5xl mb-4">📅</div>
             <h3 class="text-xl font-bold mb-3 text-zinc-400">Kedy</h3>
@@ -716,19 +671,17 @@
             <p class="text-zinc-500 mt-1">2025</p>
           </div>
           
-          <!-- Price -->
           <div class="info-card">
             <div class="text-5xl mb-4">💰</div>
             <h3 class="text-xl font-bold mb-3 text-zinc-400">Cena</h3>
             <p class="text-2xl font-black text-gradient">209 €</p>
             <div class="mt-3 text-sm text-zinc-400 space-y-1">
               <p>Early bird: 209€ (do 21. 3.)</p>
-              <p>Standard: 229€ (do 21. 5.)</p>
+              <p>Štandard: 229€ (do 21. 5.)</p>
               <p>Late: 249€ (do 30. 6.)</p>
             </div>
           </div>
           
-          <!-- Location -->
           <div class="info-card">
             <div class="text-5xl mb-4">📍</div>
             <h3 class="text-xl font-bold mb-3 text-zinc-400">Kde</h3>
@@ -736,12 +689,11 @@
             <p class="text-zinc-500 mt-1">Mníchovský potok</p>
           </div>
           
-          <!-- Registration -->
           <div class="info-card">
             <div class="text-5xl mb-4">📝</div>
             <h3 class="text-xl font-bold mb-3 text-zinc-400">Registrácia</h3>
             <a href="#registration" class="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all duration-300 text-sm">
-              Let's go!
+              Poď do toho!
             </a>
             <p class="text-zinc-500 mt-3 text-sm">Otvorená do 30. 6.</p>
           </div>
@@ -749,7 +701,6 @@
       </div>
     </section>
 
-    <!-- Registration Section -->
     <section id="registration" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -764,28 +715,27 @@
             
             <div class="space-y-4 text-lg text-zinc-300 leading-relaxed mb-8">
               <p>
-                V registrácii potrebujeme basic info o tebe a tvojom zákonnom 
-                zástupcovi. Vyberieš si aj 
-                <a href="#tracks" class="text-pink-500 hover:text-pink-400 underline">track</a>, 
-                ktorý ťa baví. Easy peasy!
+                V registrácii od teba potrebujeme pár základných info a kontakt na rodiča. 
+                Zároveň si vyberieš <a href="#tracks" class="text-pink-500 hover:text-pink-400 underline">track</a>, 
+                ktorý ťa najviac baví. Vybavené za pár minút!
               </p>
               
               <p>
-                Po registrácii ti pošleme na mail detaily o platbe, ktorú treba 
+                Po odoslaní ti príde mail s detailmi k platbe, ktorú treba 
                 <span class="font-semibold text-white">uhradiť do 3 dní</span>. 
-                Ak to nestihneme, registrácia sa ruší.
+                Ak to nestihneš, registrácia sa žiaľ ruší.
               </p>
               
               <p class="text-zinc-400 text-base">
-                Ak platbu nezaregistrujeme, spot padá a musíš sa registrovať znova.
+                Ak platba nenabehne včas, miesto posúvame ďalšiemu v poradí a musel by si sa registrovať znova.
               </p>
             </div>
             
             <div class="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 rounded-xl p-6 mb-8">
               <p class="text-zinc-300 leading-relaxed">
-                <strong class="text-pink-500">💡 Real talk:</strong> Ak je pre teba 
-                cena problém, ozvi sa nám. Ponúkame štipendium a dokážeme niečo 
-                vymyslieť. Nechceme, aby ti cena stála v ceste!
+                <strong class="text-pink-500">💡 Real talk:</strong> Ak by bola pre teba 
+                cena prekážkou, určite sa nám ozvi. Vieme ponúknuť štipendium a radi 
+                niečo vymyslíme. Nechceme, aby si kvôli financiám ostal doma!
               </p>
             </div>
             
@@ -796,7 +746,7 @@
                 rel="noopener noreferrer"
                 class="btn-primary text-xl inline-flex items-center group"
               >
-                Sign me up! 🔥
+                Chcem sa registrovať! 🔥
                 <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
               </a>
               
@@ -826,7 +776,6 @@
       </div>
     </section>
 
-    <!-- Program Section -->
     <section id="program" class="py-24 lg:py-32 bg-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -857,13 +806,13 @@
               </p>
               
               <p>
-                Ráno štartujeme raňajkami a ranným programom, kde sa naladíme 
-                na deň, checkujeme, čo nás čaká a aká je denná téma.
+                Ráno štartujeme dobrými raňajkami a ranným programom, kde sa spoločne naladíme 
+                na deň, prejdeme si, čo nás čaká a aká je denná téma.
               </p>
               
               <p>
-                Dopoludnie máš na výber podľa tvojho tracku – English classes, 
-                fitness tréning alebo volejbal. Medzi tým ťa čakajú team challenges, 
+                Dopoludnie už patrí tracku, ktorý si si vybral – English classes, 
+                fitness tréning alebo volejbal. Medzi tým ťa čakajú aj tímové challenge, 
                 kde zistíš, ako dobre viete spolupracovať.
               </p>
               
@@ -872,7 +821,7 @@
                   @click="expanded = true"
                   class="text-pink-500 hover:text-pink-400 font-semibold flex items-center gap-2 transition-colors"
                 >
-                  Read more
+                  Zobraziť viac
                   <i class="fas fa-chevron-down"></i>
                 </button>
               </div>
@@ -886,31 +835,30 @@
                 style="display: none;"
               >
                 <p>
-                  Po obede prichádza <strong>activity time</strong> – competition 
-                  medzi teammi v challenges, ktoré vyžadujú nielen fyzičku, ale 
-                  aj brain power a stratégiu.
+                  Po obede nasleduje <strong>activity time</strong> – súťaž 
+                  medzi tímami v hrách, ktoré vyžadujú nielen fyzičku, ale 
+                  aj zapojiť hlavu a dobrú stratégiu.
                 </p>
 
                 <p>
-                  Podvečer máš "free time" – ale nie úplne free. Môžeš si vybrať 
-                  z crafty dielní, amerických športov, alebo len chillnúť pri 
-                  board games s kamošmi.
+                  Podvečer máš voľný čas – môžeš si vybrať z rôznych tvorivých dielní, 
+                  zahrať si americké športy alebo len chillovať pri board games s kamošmi.
                 </p>
 
                 <p>
-                  Večer prichádza večerný program – biggest plot twist dňa! 
-                  Je to recap, show a často nejaká crazy tajná aktivita.
+                  Večer prichádza program – väčšinou ide o ten najväčší highlight dňa! 
+                  Je to taký rýchly zostrih dňa, show a často nejaká uletená tajná aktivita.
                 </p>
 
                 <p class="text-zinc-400 text-base">
                   Plus je to čas na hlbší talk. Sme kresťania a chceme ti ukázať, 
-                  ako nám Ježiš zmenil životy. Nie nudná kázeň, ale real conversation 
+                  ako nám Ježiš zmenil životy. Nie nudná kázeň, ale úprimný rozhovor
                   o živote a viere, ako to možno v kostole nepočuješ.
                 </p>
 
                 <p>
                   Na konci dňa prichádzajú <strong>E-nighty</strong> – večery 
-                  so špeciálnou témou. Môžeš sa ocitnúť v Mexiku, laboratóriu, 
+                  so špeciálnou témou. Môžeš sa ocitnúť v Mexiku, tajnom laboratóriu, 
                   na karnevale... anywhere! 🎡✨
                 </p>
                 
@@ -918,7 +866,7 @@
                   @click="expanded = false"
                   class="text-pink-500 hover:text-pink-400 font-semibold flex items-center gap-2 transition-colors"
                 >
-                  Show less
+                  Zobraziť menej
                   <i class="fas fa-chevron-up"></i>
                 </button>
               </div>
@@ -928,13 +876,12 @@
       </div>
     </section>
 
-    <!-- Place/Location Section -->
     <section id="place" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-900 to-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div class="inline-block mb-6 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
-              <span class="text-cyan-500 font-bold text-sm uppercase tracking-wider">📍 Location</span>
+              <span class="text-cyan-500 font-bold text-sm uppercase tracking-wider">📍 Lokalita</span>
             </div>
             
             <h2 class="section-heading mb-6">
@@ -943,14 +890,14 @@
             
             <p class="text-lg text-zinc-300 leading-relaxed mb-8">
               Tento rok ideme do srdca prírody, kde nás čaká peace, fresh air 
-              a good vibes. Camp bude na <strong>Floriho chate</strong> pri 
+              a super atmoška. Camp bude na <strong>Floriho chate</strong> pri 
               Mníchovskom potoku, neďaleko Bardejovských kúpeľov.
             </p>
 
             <p class="text-lg text-zinc-300 leading-relaxed mb-8">
               <span class="text-cyan-500 font-semibold">Perfect spot pre všetky naše 
               activities</span> – od táborových games cez športovanie až po chill 
-              momenty v prírode. Can't wait! 🌲⛰️
+              momenty v prírode. Už teraz sa nevieme dočkať! 🌲⛰️v
             </p>
             
             <div class="grid grid-cols-2 gap-4">
@@ -961,7 +908,7 @@
               </div>
               <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
                 <div class="text-3xl mb-2">🏠</div>
-                <div class="font-bold">Comfort</div>
+                <div class="font-bold">Komfort</div>
                 <div class="text-sm text-zinc-400">Pohodlné ubytko</div>
               </div>
               <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
@@ -992,7 +939,6 @@
       </div>
     </section>
 
-    <!-- Deep Talk / Who We Are Section -->
     <section id="deeptalk" class="py-24 lg:py-32 bg-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -1010,20 +956,20 @@
           
           <div>
             <h2 class="section-heading mb-6">
-              We're not afraid of <span class="text-gradient">depth</span>
+              Nebojíme sa ísť do <span class="text-gradient">hĺbky</span>
             </h2>
             
             <div class="space-y-4 text-lg text-zinc-300 leading-relaxed">
               <p>
-                Sme skupina mladých kresťanov z Prešova, ktorým záleží na real 
-                vzťahoch a autentických rozhovoroch. Nechceme len povrchné 
+                Sme skupina mladých kresťanov z Prešova, ktorým záleží na skutočných 
+                vzťahoch a autentických rozhovoroch. Nechceme ostať len pri klasickom povrchnom 
                 "Ako sa máš? – Dobre."
               </p>
               
               <p>
-                Chceme deep conversations o živote – o jeho beauty, ale aj struggles. 
-                O otázkach, na ktoré nie sú easy answers. Chceme, aby život mal 
-                <em>flavor</em> a zmysel.
+                Baví nás baviť sa o živote – o tom, čo je na ňom super, ale aj o ťažkostiach. 
+                Hľadáme odpovede na otázky, ktoré nie sú úplne jednoduché. Chceme, aby náš život mal 
+                šťavu a zmysel.
               </p>
               
               <p class="text-pink-500 font-semibold text-xl">
@@ -1031,12 +977,8 @@
               </p>
               
               <p>
-                Preto sa cez rok stretávame – hráme games, športujeme, chodíme 
-                na trips a hikes, alebo len chillujeme pri dobrom jedle.
-              </p>
-              
-              <p class="text-2xl font-bold">
-                Chceš byť part of something bigger? Join us! 🤝
+                Preto sa ako partia stretávame aj počas roka – hráme hry, športujeme, chodíme 
+                na výlety a túry, alebo len tak chillujeme pri dobrom jedle.
               </p>
             </div>
           </div>
@@ -1044,19 +986,17 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <h2 class="section-heading mb-6">
-              Got questions? Hit us up!
+              Máš otázky? Napíš nám!
             </h2>
             
             <p class="text-xl text-zinc-300 mb-8 leading-relaxed">
-              Určite sme na niečo zabudli alebo ti niečo nie je jasné. 
-              <span class="text-pink-500 font-semibold">No worries – píš nám! 
-              We love to chat.</span> 💬
+              Určite sme na niečo zabudli alebo ti niečo nie je jasné, 
+              <span class="text-pink-500 font-semibold">kľudne sa ozvi. Radi všetko vysvetlíme.</span> 💬
             </p>
             
             <div class="space-y-4">
@@ -1065,7 +1005,7 @@
                 class="btn-secondary flex items-center justify-center group"
               >
                 <i class="fas fa-envelope mr-3 group-hover:rotate-12 transition-transform"></i>
-                Email us
+                Napísať email
               </a>
               
               <a
@@ -1075,7 +1015,7 @@
                 class="btn-secondary flex items-center justify-center group"
               >
                 <i class="fab fa-facebook mr-3 group-hover:scale-110 transition-transform"></i>
-                Facebook
+                Napísať na Facebook
               </a>
             </div>
           </div>
@@ -1095,22 +1035,20 @@
       </div>
     </section>
 
-    <!-- Social Media Section -->
     <section id="social" class="py-24 lg:py-32 bg-zinc-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            Are you in?
+            Zostaňme v kontakte
           </h2>
           <p class="text-xl text-zinc-300 max-w-3xl mx-auto">
-            Follow nás na socials, aby ti neunikol žiaden update. Uvidíš 
-            behind the scenes a budeš v loop! 
-            <span class="text-pink-500 font-semibold">Let's connect! 📱✨</span>
+            Daj nám follow na sociálnych sieťach a neujde ti žiadna novinka. Pridávame tam 
+            aj zákulisie a updaty pred campom. 
+            <span class="text-pink-500 font-semibold">Sleduj nás! 📱✨</span>
           </p>
         </div>
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <!-- Instagram -->
           <a
             href="https://www.instagram.com/kecypo/"
             target="_blank"
@@ -1124,7 +1062,6 @@
             <p class="text-zinc-400">@kecypo</p>
           </a>
           
-          <!-- Facebook -->
           <a
             href="https://www.facebook.com/kecypo"
             target="_blank"
@@ -1138,7 +1075,6 @@
             <p class="text-zinc-400">fb.com/kecypo</p>
           </a>
           
-          <!-- YouTube -->
           <a
             href="https://www.youtube.com/channel/UCI4diMxE8NeNbHvPApXRFlw"
             target="_blank"
@@ -1152,7 +1088,6 @@
             <p class="text-zinc-400">KECY PO</p>
           </a>
           
-          <!-- Contact Info -->
           <div class="social-card border-pink-500/20">
             <div class="text-5xl mb-4">👤</div>
             <h3 class="text-xl font-bold mb-2">Camp Leader</h3>
@@ -1169,16 +1104,15 @@
       </div>
     </section>
 
-    <!-- Partners Section -->
     <section class="py-24 lg:py-32 bg-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-heading mb-6">
-            Big thanks! 🙏
+            Veľká vďaka! 🙏
           </h2>
           <p class="text-xl text-zinc-300">
-            Bez týchto organizácií by sme camp nedokázali zrealizovať. 
-            Veľká vďaka za support! 😊
+            Bez podpory týchto organizácií by sme camp vôbec nedokázali zrealizovať. 
+            Ešte raz ďakujeme! 😊
           </p>
         </div>
         
@@ -1256,13 +1190,11 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-12 bg-black border-t border-zinc-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Footer Navigation -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
           <a href="#about" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Čo sú KECY?</a>
-          <a href="#aboutmore" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Čím sme iní</a>
+          <a href="#aboutmore" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">V čom sme iní</a>
           <a href="#video" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Galéria</a>
           <a href="#tracks" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Tracky</a>
           <a href="#info" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Info</a>
@@ -1272,17 +1204,15 @@
           <a href="#deeptalk" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Kto sme</a>
         </div>
         
-        <!-- Copyright -->
         <div class="text-center pt-8 border-t border-zinc-800">
           <p class="text-zinc-500 text-sm">
             Za KECY Team PO vytvoril s 💜 Braňko v Prešove.<br/>
-            All rights reserved. No cookies tracking. © 2025.
+            Všetky práva vyhradené. No cookies tracking. © 2025.
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <div 
       x-data="{ show: false }"
       @scroll.window="show = window.scrollY > 300"
