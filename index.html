@@ -1,355 +1,438 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="sk" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <link
-      rel="icon"
-      href="../src/static/img/camp/favicon.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="./dist/style.css?v=17" />
-    <title>KECY PO | Anglický letný camp 2025</title>
-
+    <meta name="theme-color" content="#ec4899" />
+    
+    <title>KECY Camp PO | Anglický letný camp 2025 🔥</title>
+    
     <meta name="title" content="KECY Camp PO | Anglický letný tábor 2025" />
     <meta
       name="description"
-      content="Anglický letný tábor pre stredoškolákov z Prešova. Zaži angličtinu a dobrodružstvo na vlastnej koži. 20.-26. júla 2025."
+      content="Anglický letný camp pre stredoškolákov z Prešova. Real talk s native speakers, nové friendships a nezabudnuteľné zážitky. 20.-26. júla 2025."
     />
     <meta
       name="keywords"
-      content="letný tábor, anglický tábor, tábor, stredoškolák, stredoškoláci, leto, prázdniny, KECY, Prešov, 2025"
+      content="letný tábor, anglický tábor, camp, stredoškolák, KECY, Prešov, 2025, native speakers"
     />
-    <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="Slovak" />
-    <script
-      src="https://kit.fontawesome.com/bfc4cd05e5.js"
-      crossorigin="anonymous"
-    ></script>
     
-    <!-- Alpine.js for expandable gallery -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon" href="../src/static/img/camp/favicon.png" type="image/x-icon" />
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bfc4cd05e5.js" crossorigin="anonymous"></script>
+    
+    <!-- Vite Entry Point -->
+    <script type="module" src="/src/main.js"></script>
   </head>
-  <body class="text-black">
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "215373245156131");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: "v13.0",
-        });
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/sk_SK/sdk/xfbml.customerchat.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
+  
+  <body class="bg-zinc-950 text-white antialiased" x-data="{ menuOpen: false }">
+    
+    <!-- Floating Navigation -->
+    <nav 
+      x-data="{ scrolled: false }"
+      @scroll.window="scrolled = window.scrollY > 50"
+      :class="scrolled ? 'bg-zinc-900/95 backdrop-blur-lg shadow-2xl' : 'bg-transparent'"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <!-- Logo -->
+          <a href="#" class="text-2xl sm:text-3xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+            KECY
+          </a>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center gap-8">
+            <a href="#about" class="nav-link">O campe</a>
+            <a href="#tracks" class="nav-link">Tracky</a>
+            <a href="#video" class="nav-link">Galéria</a>
+            <a href="#info" class="nav-link">Info</a>
+            <a href="#registration" class="btn-primary">Chcem sa registrovať! 🚀</a>
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <button 
+            @click="menuOpen = !menuOpen"
+            class="lg:hidden relative w-10 h-10 text-white focus:outline-none"
+            aria-label="Menu"
+          >
+            <span class="sr-only">Open menu</span>
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <span 
+                :class="menuOpen ? 'rotate-45 translate-y-1.5' : ''"
+                class="block w-6 h-0.5 bg-white transition-all duration-300 mb-1.5"
+              ></span>
+              <span 
+                :class="menuOpen ? 'opacity-0' : ''"
+                class="block w-6 h-0.5 bg-white transition-all duration-300 mb-1.5"
+              ></span>
+              <span 
+                :class="menuOpen ? '-rotate-45 -translate-y-1.5' : ''"
+                class="block w-6 h-0.5 bg-white transition-all duration-300"
+              ></span>
+            </div>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div 
+        x-show="menuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-4"
+        class="lg:hidden bg-zinc-900/98 backdrop-blur-lg border-t border-zinc-800"
+        @click.away="menuOpen = false"
+        style="display: none;"
+      >
+        <div class="px-4 py-6 space-y-4">
+          <a href="#about" @click="menuOpen = false" class="block py-3 text-lg font-medium hover:text-pink-500 transition-colors">O campe</a>
+          <a href="#tracks" @click="menuOpen = false" class="block py-3 text-lg font-medium hover:text-pink-500 transition-colors">Tracky</a>
+          <a href="#video" @click="menuOpen = false" class="block py-3 text-lg font-medium hover:text-pink-500 transition-colors">Galéria</a>
+          <a href="#info" @click="menuOpen = false" class="block py-3 text-lg font-medium hover:text-pink-500 transition-colors">Info</a>
+          <a href="#program" @click="menuOpen = false" class="block py-3 text-lg font-medium hover:text-pink-500 transition-colors">Program</a>
+          <a href="#registration" @click="menuOpen = false" class="block mt-4 btn-primary text-center">Registruj sa 🚀</a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
-    <div id="hero-camp" class="flex h-screen flex-wrap">
-      <div
-        class="flex h-screen w-full flex-wrap content-end bg-gradient-to-b from-transparent via-transparent to-black"
-      >
-        <div class="mx-8 mb-32 w-screen text-center text-gray-100">
-          <p class="block text-lg uppercase tracking-widest sm:text-xl">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="./src/static/img/camp/hero.jpg" 
+          alt="KECY Camp" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/40 to-zinc-950"></div>
+      </div>
+      
+      <!-- Animated gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20 mix-blend-overlay animate-gradient"></div>
+      
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
+        <div>
+          <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase text-cyan-400 mb-4 animate-pulse">
             English Summer Camp 2025
           </p>
-          <h1 class="my-2 text-5xl font-bold sm:text-6xl md:my-4">
-            KECY Camp Prešov
+          
+          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+            <span class="block bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-gradient">
+              KECY Camp
+            </span>
+            <span class="block text-white text-3xl sm:text-5xl lg:text-6xl mt-2">
+              Prešov
+            </span>
           </h1>
-          <h4 class="text-xl sm:text-2xl">
-            Anglický letný camp, kde sa baví, učí a žije naplno. 🔥
-          </h4>
-          <div class="mt-8 space-y-6">
-            <a href="#registration" class="kp-btn-outline">Chcem na camp!</a>
+          
+          <p class="text-lg sm:text-2xl text-zinc-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Letný camp, kde sa baví, učí a žije naplno.<br/>
+            <span class="text-pink-500 font-semibold">Real talk, real friendships, real vibes. 🔥</span>
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#registration" class="btn-primary text-lg group">
+              Chcem na camp!
+              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform inline-block"></i>
+            </a>
+            <a href="#video" class="btn-secondary text-lg group">
+              <i class="fas fa-play mr-2 group-hover:scale-110 transition-transform inline-block"></i>
+              Check aftermovie
+            </a>
+          </div>
+          
+          <!-- Quick Info Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
+            <div class="glass-card p-6 text-center hover-lift">
+              <div class="text-3xl mb-2">📅</div>
+              <div class="font-bold text-lg">20. - 26. júla</div>
+              <div class="text-sm text-zinc-400">2025</div>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift">
+              <div class="text-3xl mb-2">💰</div>
+              <div class="font-bold text-lg">od 209 €</div>
+              <div class="text-sm text-zinc-400">Early bird cena</div>
+            </div>
+            <div class="glass-card p-6 text-center hover-lift">
+              <div class="text-3xl mb-2">📍</div>
+              <div class="font-bold text-lg">Floriho chata</div>
+              <div class="text-sm text-zinc-400">Mníchovský potok</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Navigation Menu -->
-    <div class="bg-black py-32">
-      <div id="menu" class="kp-container text-gray-100 md:text-center">
-        <h3 class="kp-section-header">Čo sa dozvieš</h3>
-        <div
-          class="mt-10 items-center gap-10 space-y-6 md:flex md:flex-wrap md:space-y-0"
-        >
-          <div class="flex-1">
-            <a href="#about" class="text-xl font-bold">Čo sú KECY?</a>
-          </div>
-          <div class="flex-1">
-            <a href="#aboutmore" class="text-xl font-bold">Prečo práve my</a>
-          </div>
-          <div class="flex-1">
-            <a href="#video" class="text-xl font-bold">Video & Galéria</a>
-          </div>
-          <div class="flex-1">
-            <a href="#tracks" class="text-xl font-bold">Tracky</a>
-          </div>
-          <div class="flex-1">
-            <a href="#info" class="text-xl font-bold">Info o campe</a>
-          </div>
-          <div class="flex-1">
-            <a href="#registration" class="text-xl font-bold">Registrácia</a>
-          </div>
-          <div class="flex-1">
-            <a href="#program" class="text-xl font-bold">Deň na campe</a>
-          </div>
-          <div class="flex-1">
-            <a href="#place" class="text-xl font-bold">Kde budeme</a>
-          </div>
-          <div class="flex-1">
-            <a href="#deeptalk" class="text-xl font-bold">Kto sme</a>
-          </div>
-        </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-2xl text-white/50"></i>
       </div>
-    </div>
-
-    <!-- Intro Video Section -->
-    <div class="bg-gray-900 py-32 text-gray-100">
-      <div class="kp-container">
-        <h3 class="kp-section-header">Toto sú KECY, tvoj letný camp 🌊</h3>
-        <h4 class="mb-10 md:text-center md:text-2xl">
-          Pozri si aftermovie z vlaňajška a nechaj sa vtiahnuť do letnej vibe. 
-          Toto leto môžeš byť súčasťou toho aj ty! 🌴☀️
-        </h4>
-        <div class="relative mb-24" style="padding-top: 56.25%">
-          <iframe
-            src="https://www.youtube.com/embed/9EGViR5E9B8"
-            class="absolute inset-0 h-full w-full"
-            frameborder="0"
-            loading="lazy"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <!-- About Section -->
-    <div id="about" class="bg-gray-500 py-32 text-gray-100">
-      <div class="kp-container">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <h3 class="kp-section-header">Čo vlastne KECY Camp je?</h3>
-            <p class="kp-section-text">
-              KECY je letný camp pre stredoškolákov, kde sa stretnú ľudia 
-              z Prešova a okolia spolu s Američanmi z Minneapolis. Počas týždňa 
-              ti ukážeme, že komunikovať v angličtine je v pohode a že sa toho 
-              netreba báť. Okrem angličtiny ťa čaká športovanie, zábava, nové 
-              kamarátstva a zážitky, na ktoré sa nezabúda. Už sa na teba tešíme! ☀️🏝️
-            </p>
+    <section id="about" class="py-24 lg:py-32 bg-zinc-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <div class="inline-block mb-4 px-4 py-2 bg-pink-500/10 border border-pink-500/20 rounded-full">
+              <span class="text-pink-500 font-bold text-sm uppercase tracking-wider">🌊 Čo sú KECY?</span>
+            </div>
+            
+            <h2 class="section-heading mb-6">
+              Toto nie je len ďalší <span class="text-gradient">letný camp</span>
+            </h2>
+            
+            <div class="space-y-4 text-lg text-zinc-300 leading-relaxed">
+              <p>
+                KECY je camp pre stredoškolákov, kde sa stretnú ľudia z Prešova 
+                a okolia s <span class="text-cyan-400 font-semibold">native speakers z Minneapolis</span>. 
+                Počas týždňa ti ukážeme, že angličtina nie je nič scary a že sa toho naozaj nemusíš báť.
+              </p>
+              
+              <p>
+                Okrem angličtiny ťa čaká fitness, volejbal, nové friendships a 
+                momenty, ktoré ti zostanú v hlave navždy. Nie je to len camp – 
+                je to začiatok niečoho bigger.
+              </p>
+              
+              <p class="text-pink-500 font-semibold text-xl">
+                Can't wait to see you there! ☀️🏝️
+              </p>
+            </div>
+            
+            <div class="mt-8 flex flex-wrap gap-4">
+              <div class="stat-badge">
+                <span class="text-3xl font-black text-pink-500">11</span>
+                <span class="text-sm text-zinc-400">rokov tradície</span>
+              </div>
+              <div class="stat-badge">
+                <span class="text-3xl font-black text-purple-500">200+</span>
+                <span class="text-sm text-zinc-400">happy campers</span>
+              </div>
+              <div class="stat-badge">
+                <span class="text-3xl font-black text-cyan-500">3</span>
+                <span class="text-sm text-zinc-400">tracky na výber</span>
+              </div>
+            </div>
           </div>
-          <div class="flex-1">
-            <img
-              src="./src/static/img/camp/group.jpg"
-              alt="Priatelia na turistike"
-              class="kp-section-image"
-              loading="lazy"
-            />
+          
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden hover-lift">
+              <img 
+                src="./src/static/img/camp/group.jpg" 
+                alt="Priatelia na campe" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+            </div>
+            
+            <!-- Floating element -->
+            <div class="absolute -bottom-6 -left-6 glass-card p-6 max-w-xs hidden lg:block hover-lift">
+              <div class="flex items-center gap-4">
+                <div class="text-4xl">🇺🇸</div>
+                <div>
+                  <div class="font-bold text-lg">Native Speakers</div>
+                  <div class="text-sm text-zinc-400">Real American experience</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Why Different Section -->
-    <div id="aboutmore" class="bg-gray-700 py-32 text-gray-100">
-      <div class="kp-container">
-        <h3 class="kp-section-header">Čím sme iní?</h3>
-        <p class="kp-section-text md:text-center">
-          Už tuší, že KECY Camp je niečo viac ako len klasický letný tábor? 
-          Presne tak! Tu je pár vecí, ktoré nás robia výnimočnými.
-        </p>
-        <div
-          class="mt-10 space-y-8 lg:grid lg:grid-cols-3 lg:gap-10 lg:space-y-0"
-        >
-          <div
-            class="kp-animation border-8 border-gray-100 py-10 px-6 text-center"
-          >
-            <h3 class="text-2xl font-bold">Lokálna komunita 🤝</h3>
-            <img
-              src="./src/static/img/camp/friends.jpg"
-              alt="Priatelia v náručí"
-              class="my-6 w-full object-scale-down px-8"
-              loading="lazy"
-            />
-            <p class="kp-section-text">
-              Nerobíme camp pre celé Slovensko, ale zamerávame sa na Prešov. 
-              To znamená, že na campe budeš s ľuďmi z tvojho mesta, s ktorými 
-              môžeš zostať v kontakte aj po lete. Real connections, not just Instagram follows.
+    <section id="aboutmore" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            Čím sme vlastne iní?
+          </h2>
+          <p class="text-xl text-zinc-300 max-w-3xl mx-auto">
+            Už chápeš, že KECY Camp nie je len random letný tábor? 
+            Tu je zopár vecí, ktoré nás robia <span class="text-gradient font-semibold">unique</span>.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="feature-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/friends.jpg" 
+                alt="Lokálna komunita" 
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="text-4xl">🤝</span>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-pink-500 transition-colors">
+              Lokálna comunity
+            </h3>
+            
+            <p class="text-zinc-400 leading-relaxed">
+              Nerobíme camp pre celé Slovensko. Sme focused na Prešov. To znamená, 
+              že tu spoznáš ľudí z tvojho mesta, s ktorými môžeš ostať v kontakte 
+              aj po campe. Real connections, not just random follows.
             </p>
           </div>
-          <div
-            class="kp-animation border-8 border-gray-100 py-10 px-6 text-center"
-          >
-            <h3 class="text-2xl font-bold">Native speakers 🇺🇸</h3>
-            <img
-              src="./src/static/img/camp/usa.jpg"
-              alt="Priatelia z USA"
-              class="my-6 w-full object-scale-down px-8"
-              loading="lazy"
-            />
-            <p class="kp-section-text">
-              "Wait, ty mi naozaj rozumieš?!" Áno, a dokonca ťa pochopí aj Američan! 
-              Chceme ti ukázať, že angličtina nie je také sci-fi, ako sa zdá. 
-              Príď si zažiť real talk s native speakermi a zisti, že na to máš.
+          
+          <!-- Card 2 -->
+          <div class="feature-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/usa.jpg" 
+                alt="Native speakers" 
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="text-4xl">🇺🇸</span>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-purple-500 transition-colors">
+              Native speakers
+            </h3>
+            
+            <p class="text-zinc-400 leading-relaxed">
+              "Wait, you actually understand me?!" Yep, a dokonca ťa pochopí aj Američan! 
+              Chceme ti ukázať, že angličtina nie je žiaden rocket science. Príď si 
+              vycheckovať real talk s native speakermi a zisti, že na to máš.
             </p>
           </div>
-          <div
-            class="kp-animation border-8 border-gray-100 py-10 px-6 text-center"
-          >
-            <h3 class="text-2xl font-bold">Viac ako len camp 🥾🎮</h3>
-            <img
-              src="./src/static/img/camp/more_than_camp.jpg"
-              alt="Priateľské vzťahy medzi dievčatami"
-              class="my-6 w-full object-scale-down px-8"
-              loading="lazy"
-            />
-            <p class="kp-section-text">
-              Camp nie je len týždeň, ale začiatok niečoho väčšieho. Cez leto 
-              sa stretávame na tripoch, túrach, alebo len tak na zmrzline. Vždy 
-              sa môžeš pripojiť. Preto robíme camp na začiatku leta – aby sme 
-              mali čas na ďalšie aventúry!
+          
+          <!-- Card 3 -->
+          <div class="feature-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/more_than_camp.jpg" 
+                alt="Viac ako camp" 
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent"></div>
+              <div class="absolute bottom-4 left-4">
+                <span class="text-4xl">🌟</span>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-4 group-hover:text-cyan-500 transition-colors">
+              It's more than a camp
+            </h3>
+            
+            <p class="text-zinc-400 leading-relaxed">
+              Camp nie je len týždeň. Je to start niečoho väčšieho. Cez leto sa 
+              stretávame na tripoch, hikoch, alebo len tak na zmrzline. Vždy sa 
+              môžeš pripojiť. Preto robíme camp na začiatku leta – aby sme mali 
+              čas na ďalšie adventures!
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Video & Gallery Section with Expandable Feature -->
-    <div id="video" class="bg-black py-32" x-data="{ showAllGalleries: false }">
-      <div class="kp-container text-gray-100">
-        <h3 class="kp-section-header">
-          Lepšie raz vidieť ako 100× čítať... A ešte lepšie zažiť!
-        </h3>
-        <h4 class="mb-10 text-2xl md:text-center">
-          Pozri si, ako to u nás vyzerá...
-        </h4>
+    <!-- Video & Gallery Section -->
+    <section id="video" class="py-24 lg:py-32 bg-zinc-900" x-data="{ showAllGalleries: false }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            Better to see than read...
+            <span class="text-gradient block">Best to experience!</span>
+          </h2>
+          <p class="text-xl text-zinc-300">
+            Check out how it looks like at KECY Camp...
+          </p>
+        </div>
         
-        <!-- Videos Grid -->
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 mb-24">
-          <div class="relative" style="padding-top: 56.25%">
-            <iframe
-              src="https://www.youtube.com/embed/0RfZ3TwLJj0"
-              class="absolute inset-0 h-full w-full"
-              frameborder="0"
-              loading="lazy"
-              allowfullscreen
-            ></iframe>
+        <!-- Featured Videos -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="relative rounded-2xl overflow-hidden hover-lift">
+            <div class="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/9EGViR5E9B8"
+                class="w-full h-full"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
-
-          <div class="relative" style="padding-top: 56.25%">
-            <iframe
-              src="https://www.youtube.com/embed/0dClZ4tFwRg"
-              class="absolute inset-0 h-full w-full"
-              frameborder="0"
-              loading="lazy"
-              allowfullscreen
-            ></iframe>
+          
+          <div class="relative rounded-2xl overflow-hidden hover-lift">
+            <div class="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/0RfZ3TwLJj0"
+                class="w-full h-full"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
-
+        
         <!-- Gallery Header -->
         <div class="text-center mb-10">
-          <h3 class="text-3xl font-bold mb-4">Fotogalérie z uplynulých rokov</h3>
-          <p class="text-gray-400">Spomienky, ktoré ostanú navždy 📸</p>
+          <h3 class="text-3xl font-bold mb-4">Galérie z uplynulých rokov</h3>
+          <p class="text-zinc-400">Memories that last forever 📸</p>
         </div>
 
-        <!-- Recent Galleries (Always Visible) - 2024 & 2023 -->
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-          <!-- 2024 - The Original -->
-          <a
-            href="https://photos.app.goo.gl/8DDDGWLRWxUenrE67"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-kc-blue p-4">
-              <img
-                src="./src/static/img/camp/g-2024.jpg"
-                alt="Camp 2024"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">The Original</h4>
-                <p class="text-lg">2024</p>
+        <!-- Recent Galleries (Always Visible) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          <!-- 2024 -->
+          <a href="https://photos.app.goo.gl/8DDDGWLRWxUenrE67" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2024.jpg" alt="Camp 2024" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">The Original</div>
+                <div class="text-2xl font-black">2024</div>
               </div>
             </div>
           </a>
-
-          <!-- 2023 - Part of the Plan -->
-          <a
-            href="https://photos.app.goo.gl/pqVEhDU2aseyonU19"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-400 p-4">
-              <img
-                src="./src/static/img/camp/g-2023.jpg"
-                alt="Camp 2023"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Part of the Plan</h4>
-                <p class="text-lg">2023</p>
+          
+          <!-- 2023 -->
+          <a href="https://photos.app.goo.gl/pqVEhDU2aseyonU19" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2023.jpg" alt="Camp 2023" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Part of the Plan</div>
+                <div class="text-2xl font-black">2023</div>
               </div>
             </div>
           </a>
-
+          
           <!-- 2023 Groups -->
-          <a
-            href="https://photos.app.goo.gl/FeYBrU3srL8y71Xi9"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-600 p-4">
-              <img
-                src="./src/static/img/camp/g-2023-g.jpg"
-                alt="Camp 2023 Groups"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Part of the Plan | Groups</h4>
-                <p class="text-lg">2023</p>
+          <a href="https://photos.app.goo.gl/FeYBrU3srL8y71Xi9" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2023-g.jpg" alt="Camp 2023 Groups" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Groups</div>
+                <div class="text-2xl font-black">2023</div>
               </div>
             </div>
           </a>
-
-          <!-- 2022 - All Good -->
-          <a
-            href="https://photos.app.goo.gl/7qEG9oyH35JSs14Q9"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-kc-green p-4">
-              <img
-                src="./src/static/img/camp/g-2022.jpg"
-                alt="Camp 2022"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">All Good | Moments</h4>
-                <p class="text-lg">2022</p>
+          
+          <!-- 2022 -->
+          <a href="https://photos.app.goo.gl/7qEG9oyH35JSs14Q9" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2022.jpg" alt="Camp 2022" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">All Good</div>
+                <div class="text-2xl font-black">2022</div>
               </div>
             </div>
           </a>
@@ -361,145 +444,82 @@
           x-transition:enter="transition ease-out duration-500"
           x-transition:enter-start="opacity-0 -translate-y-4"
           x-transition:enter-end="opacity-100 translate-y-0"
-          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8"
           style="display: none;"
         >
           <!-- 2022 Groups -->
-          <a
-            href="https://photos.app.goo.gl/T5vdiEnd3mmzbLmi6"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-400 p-4">
-              <img
-                src="./src/static/img/camp/g-2022-g.jpg"
-                alt="Camp 2022 Groups"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">All Good | Groups</h4>
-                <p class="text-lg">2022</p>
+          <a href="https://photos.app.goo.gl/T5vdiEnd3mmzbLmi6" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2022-g.jpg" alt="Camp 2022 Groups" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Groups</div>
+                <div class="text-2xl font-black">2022</div>
               </div>
             </div>
           </a>
 
-          <!-- 2021 - Beyond Moments -->
-          <a
-            href="https://photos.app.goo.gl/tzKANWhjtifpP9ho8"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-kc-green p-4">
-              <img
-                src="./src/static/img/camp/g-2021.jpg"
-                alt="Camp 2021"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Beyond | Moments</h4>
-                <p class="text-lg">2021</p>
+          <!-- 2021 -->
+          <a href="https://photos.app.goo.gl/tzKANWhjtifpP9ho8" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2021.jpg" alt="Camp 2021" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Beyond</div>
+                <div class="text-2xl font-black">2021</div>
               </div>
             </div>
           </a>
 
           <!-- 2021 Groups -->
-          <a
-            href="https://photos.app.goo.gl/kLAartgi1teac78s7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-kc-blue p-4">
-              <img
-                src="./src/static/img/camp/g-2021-g.jpg"
-                alt="Camp 2021 Groups"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Beyond | Groups</h4>
-                <p class="text-lg">2021</p>
+          <a href="https://photos.app.goo.gl/kLAartgi1teac78s7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2021-g.jpg" alt="Camp 2021 Groups" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Groups</div>
+                <div class="text-2xl font-black">2021</div>
               </div>
             </div>
           </a>
 
-          <!-- 2019 - Home -->
-          <a
-            href="https://photos.app.goo.gl/VsWqmdirfV2qJeED7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-600 p-4">
-              <img
-                src="./src/static/img/camp/g-4.jpg"
-                alt="Camp 2019"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Home</h4>
-                <p class="text-lg">2019</p>
+          <!-- 2019 -->
+          <a href="https://photos.app.goo.gl/VsWqmdirfV2qJeED7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-4.jpg" alt="Camp 2019" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Home</div>
+                <div class="text-2xl font-black">2019</div>
               </div>
             </div>
           </a>
 
-          <!-- 2018 - Reign Forever -->
-          <a
-            href="https://photos.app.goo.gl/GisYG47iQRp4Ag3R7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-400 p-4">
-              <img
-                src="./src/static/img/camp/g-3.jpg"
-                alt="Camp 2018"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Reign Forever</h4>
-                <p class="text-lg">2018</p>
+          <!-- 2018 -->
+          <a href="https://photos.app.goo.gl/GisYG47iQRp4Ag3R7" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-3.jpg" alt="Camp 2018" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Reign Forever</div>
+                <div class="text-2xl font-black">2018</div>
               </div>
             </div>
           </a>
 
-          <!-- 2017 - Seen -->
-          <a
-            href="https://photos.app.goo.gl/aDqcQfAtZ4UzUbU18"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-gray-700 p-4">
-              <img
-                src="./src/static/img/camp/g-2.jpg"
-                alt="Camp 2017"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Seen</h4>
-                <p class="text-lg">2017</p>
+          <!-- 2017 -->
+          <a href="https://photos.app.goo.gl/aDqcQfAtZ4UzUbU18" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-2.jpg" alt="Camp 2017" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Seen</div>
+                <div class="text-2xl font-black">2017</div>
               </div>
             </div>
           </a>
 
-          <!-- 2016 - Did you get my message? -->
-          <a
-            href="https://photos.app.goo.gl/7yiyoLsjCwyTS4CXA"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="kp-animation"
-          >
-            <div class="bg-kc-green p-4">
-              <img
-                src="./src/static/img/camp/g-1.jpg"
-                alt="Camp 2016"
-                loading="lazy"
-              />
-              <div class="mt-4 border-l-8 border-gray-100 px-4 py-2">
-                <h4 class="text-xl">Did you get my message?</h4>
-                <p class="text-lg">2016</p>
+          <!-- 2016 -->
+          <a href="https://photos.app.goo.gl/7yiyoLsjCwyTS4CXA" target="_blank" rel="noopener noreferrer" class="gallery-item group">
+            <img src="./src/static/img/camp/g-1.jpg" alt="Camp 2016" class="w-full h-48 object-cover" loading="lazy" />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">Did you get my message?</div>
+                <div class="text-2xl font-black">2016</div>
               </div>
             </div>
           </a>
@@ -509,537 +529,781 @@
         <div class="text-center">
           <button
             @click="showAllGalleries = !showAllGalleries"
-            class="kp-btn-outline inline-flex items-center gap-2"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-zinc-800 border border-zinc-700 text-white font-bold rounded-full hover:bg-zinc-700 hover:border-pink-500/50 hover:scale-105 transition-all duration-300"
           >
-            <span x-text="showAllGalleries ? 'Zobraziť menej' : 'Ukáž všetky galérie (11 rokov!)'" class="text-lg"></span>
+            <span x-text="showAllGalleries ? 'Show less' : 'Pozri všetky galérie (11 rokov!)'"></span>
             <i class="fas fa-chevron-down transition-transform duration-300" :class="showAllGalleries ? 'rotate-180' : ''"></i>
           </button>
-          <p class="text-gray-400 mt-4 text-sm">
+          <p class="text-zinc-400 mt-4 text-sm">
             <span x-show="!showAllGalleries">Zobrazené 4 z 11 galérií</span>
-            <span x-show="showAllGalleries">Všetkých 11 galérií</span>
+            <span x-show="showAllGalleries" style="display: none;">Všetkých 11 galérií</span>
           </p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 p-8 bg-zinc-950/50 rounded-2xl border border-zinc-800">
+          <div class="text-center">
+            <div class="text-4xl font-black text-pink-500 mb-2">11</div>
+            <div class="text-sm text-zinc-400">Rokov campu</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-purple-500 mb-2">11+</div>
+            <div class="text-sm text-zinc-400">Fotogalérií</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-cyan-500 mb-2">1000+</div>
+            <div class="text-sm text-zinc-400">Memories</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-pink-500 mb-2">∞</div>
+            <div class="text-sm text-zinc-400">Friendships</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Tracks Section -->
-    <div id="tracks" class="bg-kc-blue py-32">
-      <div class="kp-container text-gray-100">
-        <div class="md:text-center">
-          <h3 class="kp-section-header">Camp šitý na mieru tebe</h3>
-          <p class="kp-section-text mb-6">
-            Tento camp je naozaj pre teba. Nie sme len o jednej veci, ale 
-            ponúkame ti výber! Môžeš sa zamerať na angličtinu a zlepšiť sa 
-            v konverzácii s native speakermi. Alebo ti je bližší fitness a chceš 
-            sa naučiť, ako zdravo pracovať so svojim telom. A ak máš rád teamové 
-            športy, volejbalový track je tu pre teba. Nerieš, či si expert alebo 
-            začiatočník – každý si tu nájde svoje miesto.
+    <section id="tracks" class="py-24 lg:py-32 bg-gradient-to-br from-pink-600/10 via-purple-600/10 to-cyan-600/10 relative overflow-hidden">
+      <!-- Animated background -->
+      <div class="absolute inset-0 opacity-30">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-pink-500 rounded-full blur-3xl animate-blob"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/2 w-96 h-96 bg-cyan-500 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            Camp tailored for <span class="text-gradient">YOU</span>
+          </h2>
+          <p class="text-xl text-zinc-300 max-w-4xl mx-auto mb-6">
+            Tento camp je naozaj pre teba. No cap! 💯 Môžeš si vybrať, ako strávíš 
+            svoje doobedie – angličtina s native speakers, fitness training, alebo 
+            volejbalový vibe.
           </p>
-          <p class="kp-section-text mb-12">
-            Track si vyberieš pri registrácii. Easy! 😊
+          <p class="text-zinc-400 max-w-3xl mx-auto">
+            Don't stress o tom, či si expert alebo beginner. 
+            <span class="text-pink-500 font-semibold">Choose what vibes with you.</span>
           </p>
         </div>
-        <div
-          class="space-y-6 text-center text-gray-100 md:flex md:space-x-10 md:space-y-0"
-        >
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <!-- Fitness Track -->
-          <div
-            class="kp-animation flex-1 cursor-pointer border-8 border-gray-100 p-4"
-          >
-            <img
-              src="./src/static/img/camp/track_fitness.jpg"
-              alt="Fitness Track"
-              class="w-full object-scale-down"
-              loading="lazy"
-            />
-            <div class="space-y-4 divide-y-4 px-6 pb-8 pt-8 md:pt-14 lg:px-16">
-              <h4 class="text-2xl font-bold">Fitness Track 💪</h4>
-              <p class="kp-section-text pt-4">
-                Baví ťa aktívny lifestyle a cvičiť? Alebo sa to chceš naučiť? 
-                Nebojíš sa zapotiť a chceš športovať s kamošmi pod vedením 
-                trénera? Fitness track je o tom, že sa netreba báť činiek a 
-                že zdravý životný štýl je viac než len fyzická stránka.
+          <div class="track-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/track_fitness.jpg" 
+                alt="Fitness Track" 
+                class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+              <div class="absolute top-4 right-4">
+                <span class="text-6xl animate-bounce">💪</span>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="text-3xl font-black group-hover:text-pink-500 transition-colors">
+                Fitness Track
+              </h3>
+              
+              <p class="text-zinc-300 leading-relaxed">
+                Baví ťa active lifestyle alebo sa to chceš naučiť? Nebojíš sa 
+                zapotiť a chceš vycvičiť s kamošmi pod vedením trénera? 
+                Tento track je o tom, že činiek sa nemusíš báť a že zdravý život 
+                je viac než len fyzička.
               </p>
+              
+              <div class="flex flex-wrap gap-2 pt-4">
+                <span class="pill">🏋️ Strength</span>
+                <span class="pill">🏃 Cardio</span>
+                <span class="pill">🧘 Mobility</span>
+                <span class="pill">💪 Gains</span>
+              </div>
             </div>
           </div>
-
+          
           <!-- English Track -->
-          <div
-            class="kp-animation flex-1 cursor-pointer border-8 border-gray-100 p-4"
-          >
-            <img
-              src="./src/static/img/camp/track_english.jpg"
-              alt="English Track"
-              class="w-full object-scale-down"
-              loading="lazy"
-            />
-            <div class="space-y-4 divide-y-4 px-6 pb-8 pt-8 md:pt-14 lg:px-16">
-              <h4 class="text-2xl font-bold">English Track 🍍</h4>
-              <p class="kp-section-text pt-4">
-                Chceš viac rozprávať po anglicky a zlepšiť sa? Na tomto tracku 
-                sa budeš venovať konverzácii, aktivitám a hrám, ktoré posunú 
-                tvoju angličtinu ďalej. Či si už pokročilý alebo len začínate, 
-                určite si nájdeš svoje miesto.
+          <div class="track-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/track_english.jpg" 
+                alt="English Track" 
+                class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+              <div class="absolute top-4 right-4">
+                <span class="text-6xl animate-bounce animation-delay-1000">🍍</span>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="text-3xl font-black group-hover:text-purple-500 transition-colors">
+                English Track
+              </h3>
+              
+              <p class="text-zinc-300 leading-relaxed">
+                Chceš viac rozprávať po anglicky a zlepšiť sa? Tento track je 
+                o konverzácii, aktivitách a hrách, ktoré posunú tvoju English 
+                na vyšší level. Či si pro alebo začínajúci, nájdeš tu svoje miesto. 
+                Let's talk!
               </p>
+              
+              <div class="flex flex-wrap gap-2 pt-4">
+                <span class="pill">🗣️ Konverza</span>
+                <span class="pill">🇺🇸 Natives</span>
+                <span class="pill">🎭 Activities</span>
+                <span class="pill">🎮 Games</span>
+              </div>
             </div>
           </div>
 
           <!-- Volleyball Track -->
-          <div
-            class="kp-animation flex-1 cursor-pointer border-8 border-gray-100 p-4"
-          >
-            <img
-              src="./src/static/img/camp/track_volleyball.jpg"
-              alt="Volleyball Track"
-              class="w-full object-scale-down"
-              loading="lazy"
-            />
-            <div class="space-y-4 divide-y-4 px-6 pb-8 pt-8 md:pt-14 lg:px-16">
-              <h4 class="text-2xl font-bold">Volleyball Track 🏐</h4>
-              <p class="kp-section-text pt-4">
-                Máš v sebe športového ducha a baví ťa team spirit? Volejbal je 
+          <div class="track-card group">
+            <div class="relative overflow-hidden rounded-xl mb-6">
+              <img 
+                src="./src/static/img/camp/track_volleyball.jpg" 
+                alt="Volleyball Track" 
+                class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+              <div class="absolute top-4 right-4">
+                <span class="text-6xl animate-bounce animation-delay-2000">🏐</span>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="text-3xl font-black group-hover:text-cyan-500 transition-colors">
+                Volleyball Track
+              </h3>
+              
+              <p class="text-zinc-300 leading-relaxed">
+                Máš v sebe športového ducha a láska k team sports? Volejbal je 
                 presne to, čo hľadáš! Budeš trénovať, hrať a hlavne sa zabaviť. 
-                Nie sme profi tím, ale vibe bude top a určite sa niečo naučíme!
+                Nie sme profi team, ale vibe bude fire a určite sa posunieme! 🔥
+              </p>
+              
+              <div class="flex flex-wrap gap-2 pt-4">
+                <span class="pill">🏐 Volleyball</span>
+                <span class="pill">🤝 Teamwork</span>
+                <span class="pill">⚡ Energy</span>
+                <span class="pill">🎯 Skills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="info" class="py-24 lg:py-32 bg-zinc-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            All the info you need
+          </h2>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Date -->
+          <div class="info-card">
+            <div class="text-5xl mb-4">📅</div>
+            <h3 class="text-xl font-bold mb-3 text-zinc-400">Kedy</h3>
+            <p class="text-2xl font-black text-gradient">20. - 26. júla</p>
+            <p class="text-zinc-500 mt-1">2025</p>
+          </div>
+          
+          <!-- Price -->
+          <div class="info-card">
+            <div class="text-5xl mb-4">💰</div>
+            <h3 class="text-xl font-bold mb-3 text-zinc-400">Cena</h3>
+            <p class="text-2xl font-black text-gradient">209 €</p>
+            <div class="mt-3 text-sm text-zinc-400 space-y-1">
+              <p>Early bird: 209€ (do 21. 3.)</p>
+              <p>Standard: 229€ (do 21. 5.)</p>
+              <p>Late: 249€ (do 30. 6.)</p>
+            </div>
+          </div>
+          
+          <!-- Location -->
+          <div class="info-card">
+            <div class="text-5xl mb-4">📍</div>
+            <h3 class="text-xl font-bold mb-3 text-zinc-400">Kde</h3>
+            <p class="text-lg font-black text-white">Floriho chata</p>
+            <p class="text-zinc-500 mt-1">Mníchovský potok</p>
+          </div>
+          
+          <!-- Registration -->
+          <div class="info-card">
+            <div class="text-5xl mb-4">📝</div>
+            <h3 class="text-xl font-bold mb-3 text-zinc-400">Registrácia</h3>
+            <a href="#registration" class="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all duration-300 text-sm">
+              Let's go!
+            </a>
+            <p class="text-zinc-500 mt-3 text-sm">Otvorená do 30. 6.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <div class="inline-block mb-6 px-4 py-2 bg-pink-500/10 border border-pink-500/20 rounded-full">
+              <span class="text-pink-500 font-bold text-sm uppercase tracking-wider">🚀 Poď s nami</span>
+            </div>
+            
+            <h2 class="section-heading mb-6">
+              Registrácia
+            </h2>
+            
+            <div class="space-y-4 text-lg text-zinc-300 leading-relaxed mb-8">
+              <p>
+                V registrácii potrebujeme basic info o tebe a tvojom zákonnom 
+                zástupcovi. Vyberieš si aj 
+                <a href="#tracks" class="text-pink-500 hover:text-pink-400 underline">track</a>, 
+                ktorý ťa baví. Easy peasy!
+              </p>
+              
+              <p>
+                Po registrácii ti pošleme na mail detaily o platbe, ktorú treba 
+                <span class="font-semibold text-white">uhradiť do 3 dní</span>. 
+                Ak to nestihneme, registrácia sa ruší.
+              </p>
+              
+              <p class="text-zinc-400 text-base">
+                Ak platbu nezaregistrujeme, spot padá a musíš sa registrovať znova.
+              </p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 rounded-xl p-6 mb-8">
+              <p class="text-zinc-300 leading-relaxed">
+                <strong class="text-pink-500">💡 Real talk:</strong> Ak je pre teba 
+                cena problém, ozvi sa nám. Ponúkame štipendium a dokážeme niečo 
+                vymyslieť. Nechceme, aby ti cena stála v ceste!
+              </p>
+            </div>
+            
+            <div class="space-y-4">
+              <a
+                href="https://www.emsreg.eu/public_otm/events/15513/registrations/landing_page?group_id=12841"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary text-xl inline-flex items-center group"
+              >
+                Sign me up! 🔥
+                <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+              </a>
+              
+              <div class="flex items-center gap-4 text-sm text-zinc-400">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:vanes.kakascikova@gmail.com" class="hover:text-pink-500 transition-colors">
+                    vanes.kakascikova@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden hover-lift">
+              <img 
+                src="./src/static/img/camp/reservation.jpg" 
+                alt="Camp Registration" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="py-24 lg:py-32 bg-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative order-2 lg:order-1">
+            <div class="relative rounded-2xl overflow-hidden hover-lift">
+              <img 
+                src="./src/static/img/camp/day.jpg" 
+                alt="Deň na campe" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+            </div>
+          </div>
+          
+          <div 
+            x-data="{ expanded: false }"
+            class="order-1 lg:order-2"
+          >
+            <h2 class="section-heading mb-6">
+              Ako vyzerá deň na campe?
+            </h2>
+            
+            <div class="space-y-4 text-zinc-300 leading-relaxed">
+              <p>
+                Začíname skoro ráno s výklusom pred svitaním... 
+                <span class="text-pink-500 font-semibold">Nah, just kidding! 😄</span>
+              </p>
+              
+              <p>
+                Ráno štartujeme raňajkami a ranným programom, kde sa naladíme 
+                na deň, checkujeme, čo nás čaká a aká je denná téma.
+              </p>
+              
+              <p>
+                Dopoludnie máš na výber podľa tvojho tracku – English classes, 
+                fitness tréning alebo volejbal. Medzi tým ťa čakajú team challenges, 
+                kde zistíš, ako dobre viete spolupracovať.
+              </p>
+              
+              <div x-show="!expanded" class="pt-4">
+                <button 
+                  @click="expanded = true"
+                  class="text-pink-500 hover:text-pink-400 font-semibold flex items-center gap-2 transition-colors"
+                >
+                  Read more
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+              
+              <div 
+                x-show="expanded"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                class="space-y-4"
+                style="display: none;"
+              >
+                <p>
+                  Po obede prichádza <strong>activity time</strong> – competition 
+                  medzi teammi v challenges, ktoré vyžadujú nielen fyzičku, ale 
+                  aj brain power a stratégiu.
+                </p>
+
+                <p>
+                  Podvečer máš "free time" – ale nie úplne free. Môžeš si vybrať 
+                  z crafty dielní, amerických športov, alebo len chillnúť pri 
+                  board games s kamošmi.
+                </p>
+
+                <p>
+                  Večer prichádza večerný program – biggest plot twist dňa! 
+                  Je to recap, show a často nejaká crazy tajná aktivita.
+                </p>
+
+                <p class="text-zinc-400 text-base">
+                  Plus je to čas na hlbší talk. Sme kresťania a chceme ti ukázať, 
+                  ako nám Ježiš zmenil životy. Nie nudná kázeň, ale real conversation 
+                  o živote a viere, ako to možno v kostole nepočuješ.
+                </p>
+
+                <p>
+                  Na konci dňa prichádzajú <strong>E-nighty</strong> – večery 
+                  so špeciálnou témou. Môžeš sa ocitnúť v Mexiku, laboratóriu, 
+                  na karnevale... anywhere! 🎡✨
+                </p>
+                
+                <button 
+                  @click="expanded = false"
+                  class="text-pink-500 hover:text-pink-400 font-semibold flex items-center gap-2 transition-colors"
+                >
+                  Show less
+                  <i class="fas fa-chevron-up"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Place/Location Section -->
+    <section id="place" class="py-24 lg:py-32 bg-gradient-to-b from-zinc-900 to-zinc-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <div class="inline-block mb-6 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
+              <span class="text-cyan-500 font-bold text-sm uppercase tracking-wider">📍 Location</span>
+            </div>
+            
+            <h2 class="section-heading mb-6">
+              Kde sa to celé odohráva?
+            </h2>
+            
+            <p class="text-lg text-zinc-300 leading-relaxed mb-8">
+              Tento rok ideme do srdca prírody, kde nás čaká peace, fresh air 
+              a good vibes. Camp bude na <strong>Floriho chate</strong> pri 
+              Mníchovskom potoku, neďaleko Bardejovských kúpeľov.
+            </p>
+
+            <p class="text-lg text-zinc-300 leading-relaxed mb-8">
+              <span class="text-cyan-500 font-semibold">Perfect spot pre všetky naše 
+              activities</span> – od táborových games cez športovanie až po chill 
+              momenty v prírode. Can't wait! 🌲⛰️
+            </p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
+                <div class="text-3xl mb-2">🏔️</div>
+                <div class="font-bold">Nature vibes</div>
+                <div class="text-sm text-zinc-400">V srdci lesa</div>
+              </div>
+              <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
+                <div class="text-3xl mb-2">🏠</div>
+                <div class="font-bold">Comfort</div>
+                <div class="text-sm text-zinc-400">Pohodlné ubytko</div>
+              </div>
+              <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
+                <div class="text-3xl mb-2">⚽</div>
+                <div class="font-bold">Sports area</div>
+                <div class="text-sm text-zinc-400">Plno aktivít</div>
+              </div>
+              <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-4">
+                <div class="text-3xl mb-2">🍽️</div>
+                <div class="font-bold">Food</div>
+                <div class="text-sm text-zinc-400">Full board</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden hover-lift aspect-video">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.145025177901!2d21.23329917703256!3d49.33904257140138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e7fdbacb1d405%3A0x7613f81a881c356d!2sFloriho%20chata!5e1!3m2!1ssk!2ssk!4v1744231590415!5m2!1ssk!2ssk"
+                class="w-full h-full"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Talk / Who We Are Section -->
+    <section id="deeptalk" class="py-24 lg:py-32 bg-zinc-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden hover-lift">
+              <img 
+                src="./src/static/img/camp/deep_talk.jpg" 
+                alt="Priatelia hrajúci na gitare" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+            </div>
+          </div>
+          
+          <div>
+            <h2 class="section-heading mb-6">
+              We're not afraid of <span class="text-gradient">depth</span>
+            </h2>
+            
+            <div class="space-y-4 text-lg text-zinc-300 leading-relaxed">
+              <p>
+                Sme skupina mladých kresťanov z Prešova, ktorým záleží na real 
+                vzťahoch a autentických rozhovoroch. Nechceme len povrchné 
+                "Ako sa máš? – Dobre."
+              </p>
+              
+              <p>
+                Chceme deep conversations o živote – o jeho beauty, ale aj struggles. 
+                O otázkach, na ktoré nie sú easy answers. Chceme, aby život mal 
+                <em>flavor</em> a zmysel.
+              </p>
+              
+              <p class="text-pink-500 font-semibold text-xl">
+                We want life to taste good! 🌟
+              </p>
+              
+              <p>
+                Preto sa cez rok stretávame – hráme games, športujeme, chodíme 
+                na trips a hikes, alebo len chillujeme pri dobrom jedle.
+              </p>
+              
+              <p class="text-2xl font-bold">
+                Chceš byť part of something bigger? Join us! 🤝
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Info Section -->
-    <div id="info" class="relative bg-black py-32">
-      <div class="kp-container text-gray-100 md:text-center">
-        <h3 class="kp-section-header">Všetko, čo potrebuješ vedieť</h3>
-        <div class="kp-section-row-start mt-10">
-          <div class="flex-1">
-            <h3 class="mb-2 text-3xl font-bold md:mb-6">Dátum</h3>
-            <p class="text-2xl font-bold">20. - 26. júla 2025</p>
-            <p class="text-gray-400 mt-2">Celý týždeň plný zábavy!</p>
-          </div>
-          <div class="flex-1">
-            <h3 class="mb-2 text-3xl font-bold md:mb-6">Cena</h3>
-            <p class="mb-2 text-2xl font-bold">209 €</p>
-            <p class="kp-section-text">
-              Early bird: 209€ do 21. 3.<br/>
-              Standard: 229€ do 21. 5.<br/>
-              Late: 249€ do 30. 6.
-            </p>
-          </div>
-          <div class="flex-1">
-            <h3 class="mb-2 text-3xl font-bold md:mb-6">Kde budeme</h3>
-            <p class="text-2xl font-bold">Floriho chata</p>
-            <p class="text-gray-400 mt-2">Mníchovský potok</p>
-          </div>
-          <div class="flex-1">
-            <h3 class="mb-2 text-3xl font-bold md:mb-6">Registrácia</h3>
-            <a href="#registration" class="kp-btn-outline mb-2 text-center"
-              >Registruj sa teraz!</a
-            >
-            <p class="kp-section-text">Otvorená do 30. júna</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Registration Section -->
-    <div id="registration" class="bg-gray-500 py-32 text-gray-100">
-      <div class="kp-container">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <h3 class="kp-section-header">Registrácia na camp</h3>
-            <p class="kp-section-text mb-6">
-              V registrácii nás zaujímajú základné info o tebe a tvojom 
-              zákonnom zástupcovi. Vyberieš si aj 
-              <a href="#tracks" class="underline">track</a>, ktorý ťa baví. 
-              Po registrácii ti pošleme na mail info o platbe, ktorú treba 
-              <u>uhradiť do 3 dní od registrácie</u>. Ak platbu nestihneme 
-              zaregistrovať, rezervácia sa zruší.
-            </p>
-            <p class="kp-section-text mb-6">
-              Máš otázky k registrácii alebo platbe? Napíš nám na 
-              <a href="mailto:vanes.kakascikova@gmail.com" class="underline font-bold"
-                >vanes.kakascikova@gmail.com</a>.
-            </p>
-            <p class="kp-section-text mb-8 bg-gray-600 p-4 rounded-lg">
-              💡 <strong>Dôležité:</strong> Ak je pre teba cena campu problém, 
-              ozvi sa nám. Ponúkame štipendium a dokážeme nájsť riešenie. 
-              Nechceme, aby ti cena stála v ceste!
-            </p>
-            <div class="text-center">
-              <a
-                href="https://www.emsreg.eu/public_otm/events/15513/registrations/landing_page?group_id=12841"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="kp-btn bg-kc-green inline-block"
-                >Chcem sa registrovať! 🚀</a
-              >
-            </div>
-          </div>
-          <div class="flex-1">
-            <img
-              src="./src/static/img/camp/reservation.jpg"
-              alt="Registrácia na camp"
-              class="kp-section-image"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Program Section -->
-    <div id="program" class="bg-gray-700 py-32 text-gray-100">
-      <div class="kp-container text-gray-100">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <img
-              src="./src/static/img/camp/day.jpg"
-              alt="Deň na campe"
-              class="kp-section-image"
-              loading="lazy"
-            />
-          </div>
-          <div class="flex-1">
-            <h3 class="kp-section-header">Ako vyzerá deň na campe?</h3>
-            <p class="kp-section-text mb-3">
-              Začíname skoro ráno výklusom po kopcoch pred svitaním... 
-              <span class="font-bold">Ale nie, nešaríme! 😄</span>
-            </p>
-            <p class="kp-section-text mb-3">
-              Ráno štartujeme raňajkami a ranným programom, kde sa spoločne 
-              naladíme na deň, zistíme, čo nás čaká, aká je denná téma a 
-              aké aktivity sú naplánované.
-            </p>
-            <p class="kp-section-text mb-3">
-              Dopoludnie máš na výber podľa toho, aký track si zvolil – buď 
-              English classes, fitness tréning, alebo volejbalový tréning. 
-              Medzi tým ťa čakajú teamové výzvy, kde zistíš, ako dobre 
-              dokáže váš tím spolupracovať.
-            </p>
-
-            <p class="kp-section-text mb-3">
-              Po obede prichádza <strong>activity time</strong> – súťaž 
-              medzi teammi v úlohách, ktoré preverujú nielen kondíciu, 
-              ale aj stratégiu a mozog. Podvečer máš "free time", čo nie je 
-              úplne free – môžeš si vybrať z crafty dielní, amerických 
-              športov, alebo len chillnuť pri spoločenských hrách.
-            </p>
-
-            <p class="kp-section-text mb-3">
-              Večer nás čaká večerný program – najväčší <em>plot twist</em> dňa. 
-              Je to recap, show a často nejaká crazy tajná aktivita. 
-              Plus chvíľa na hlbšie zamyslenie. Nebudeme ti klamať – sme 
-              kresťania a chceme ti ukázať, ako nám Ježiš zmenil životy. 
-              Nie nudná kázeň, ale real talk o živote a viere.
-            </p>
-
-            <p class="kp-section-text mb-3">
-              Na záver prichádzajú <strong>E-nighty</strong> – večery so 
-              špeciálnou témou. Môžeš sa ocitnúť v Mexiku, laboratóriu, 
-              na karnevale, kdekoľvek! 🎡✨
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Place Section -->
-    <div id="place" class="bg-kc-green py-32">
-      <div class="kp-container text-gray-100">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <h3 class="kp-section-header">Kde sa to celé deje?</h3>
-            <p class="kp-section-text mb-4">
-              Tento rok sa vyberieme do srdca prírody, kde nás čaká pokoj, 
-              čerstvý vzduch a dobrá vibe. Camp bude na <strong>Floriho chate</strong>, 
-              ktorá je ukrytá neďaleko Bardejovských kúpeľov pri Mníchovskom potoku.
-            </p>
-            <p class="kp-section-text">
-              Toto miesto je ideálne na všetky naše aktivity – od táborových 
-              hier cez športovanie až po oddych v prírode. Už sa nevieme 
-              dočkať, kedy tam budeme všetci spolu! 🌲⛰️
-            </p>
-          </div>
-          <div class="relative flex-1" style="padding-top: 56.25%">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.145025177901!2d21.23329917703256!3d49.33904257140138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e7fdbacb1d405%3A0x7613f81a881c356d!2sFloriho%20chata!5e1!3m2!1ssk!2ssk!4v1744231590415!5m2!1ssk!2ssk"
-              class="absolute inset-0 h-full w-full"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Deep Talk Section -->
-    <div id="deeptalk" class="bg-gray-900 py-32 text-gray-100">
-      <div class="kp-container">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <img
-              src="./src/static/img/camp/deep_talk.jpg"
-              alt="Priatelia hrajúci na gitare"
-              class="kp-section-image"
-              loading="lazy"
-            />
-          </div>
-          <div class="flex-1">
-            <h3 class="kp-section-header">Kto sme a prečo to robíme?</h3>
-            <p class="kp-section-text mb-4">
-              Sme skupina mladých kresťanov z Prešova, ktorým záleží na 
-              reálnych vzťahoch a autentických rozhovoroch. Nechceme len 
-              povrchné "Ako sa máš? – Dobre." Chceme sa rozprávať o živote 
-              v jeho plnosti – o radostiach, ale aj výzvach.
-            </p>
-            <p class="kp-section-text mb-4">
-              Túžime po deep conversations o otázkach, na ktoré nie sú ľahké 
-              odpovede. Chceme, aby život mal <em>chuť</em> a zmysel. Preto 
-              sa cez rok stretávame – hráme hry, športujeme, chodíme na výlety, 
-              alebo len tak chillujeme pri dobrom jedle.
-            </p>
-            <p class="kp-section-text text-xl font-bold">
-              Máš chuť byť súčasťou niečoho väčšieho? Pridaj sa k nám! 🤝
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
     <!-- Contact Section -->
-    <div class="bg-black py-32 text-gray-100">
-      <div class="kp-container">
-        <div class="kp-section-row">
-          <div class="flex-1">
-            <h3 class="kp-section-header">Máš otázky? Napíš nám!</h3>
-            <p class="kp-section-text mb-10 md:text-center">
+    <section class="py-24 lg:py-32 bg-gradient-to-b from-zinc-950 to-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <h2 class="section-heading mb-6">
+              Got questions? Hit us up!
+            </h2>
+            
+            <p class="text-xl text-zinc-300 mb-8 leading-relaxed">
               Určite sme na niečo zabudli alebo ti niečo nie je jasné. 
-              Žiadny problém – radi sa s tebou pobavíme! Sme tu pre teba. 💬
+              <span class="text-pink-500 font-semibold">No worries – píš nám! 
+              We love to chat.</span> 💬
             </p>
-            <div class="justify-center gap-6 text-center md:flex">
+            
+            <div class="space-y-4">
               <a
                 href="mailto:vanes.kakascikova@gmail.com"
-                class="kp-btn-outline mb-6 flex-1 bg-black md:mb-0"
-                >Email ✉️</a
+                class="btn-secondary flex items-center justify-center group"
               >
+                <i class="fas fa-envelope mr-3 group-hover:rotate-12 transition-transform"></i>
+                Email us
+              </a>
+              
               <a
-                href="https://m.me/kecypo"
+                href="https://www.facebook.com/kecypo"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="kp-btn-outline flex-1 bg-black"
-                >Messenger 💬</a
+                class="btn-secondary flex items-center justify-center group"
               >
+                <i class="fab fa-facebook mr-3 group-hover:scale-110 transition-transform"></i>
+                Facebook
+              </a>
             </div>
           </div>
-          <div class="flex-1">
-            <img
-              src="./src/static/img/camp/contact.jpg"
-              alt="Kontaktuj nás"
-              class="kp-section-image"
-              loading="lazy"
-            />
+          
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden hover-lift">
+              <img 
+                src="./src/static/img/camp/contact.jpg" 
+                alt="Kontakt" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 to-transparent"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Social Media Section -->
-    <div id="social" class="bg-gray-800 py-32 text-gray-100">
-      <div class="kp-container md:text-center">
-        <h3 class="kp-section-header">Si v tom s nami?</h3>
-        <p class="kp-section-text mb-10">
-          Sleduj nás na sociálnych sieťach, aby ti neuniklo nič z príprav 
-          na camp. Uvidíš behind the scenes, zoznámiš sa s teamom a budeš 
-          v obraze! 📱✨
-        </p>
-        <div class="kp-section-row-start mt-10 text-center md:flex-wrap">
-          <div class="flex-1">
-            <a
-              href="https://www.instagram.com/kecypo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3 class="mb-6 text-2xl font-bold">Instagram</h3>
-              <i class="fab fa-instagram fa-3x"></i>
-              <p class="kp-section-text">@kecypo</p>
+    <section id="social" class="py-24 lg:py-32 bg-zinc-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            Are you in?
+          </h2>
+          <p class="text-xl text-zinc-300 max-w-3xl mx-auto">
+            Follow nás na socials, aby ti neunikol žiaden update. Uvidíš 
+            behind the scenes a budeš v loop! 
+            <span class="text-pink-500 font-semibold">Let's connect! 📱✨</span>
+          </p>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/kecypo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card group"
+          >
+            <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fab fa-instagram bg-gradient-to-br from-purple-500 to-pink-500 bg-clip-text text-transparent"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Instagram</h3>
+            <p class="text-zinc-400">@kecypo</p>
+          </a>
+          
+          <!-- Facebook -->
+          <a
+            href="https://www.facebook.com/kecypo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card group"
+          >
+            <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fab fa-facebook text-blue-500"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Facebook</h3>
+            <p class="text-zinc-400">fb.com/kecypo</p>
+          </a>
+          
+          <!-- YouTube -->
+          <a
+            href="https://www.youtube.com/channel/UCI4diMxE8NeNbHvPApXRFlw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card group"
+          >
+            <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fab fa-youtube text-red-500"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">YouTube</h3>
+            <p class="text-zinc-400">KECY PO</p>
+          </a>
+          
+          <!-- Contact Info -->
+          <div class="social-card border-pink-500/20">
+            <div class="text-5xl mb-4">👤</div>
+            <h3 class="text-xl font-bold mb-2">Camp Leader</h3>
+            <p class="font-semibold text-pink-500">Vanesa Kakaščíková</p>
+            <p class="text-sm text-zinc-400 mb-2">Vedúca campu</p>
+            <a href="mailto:vanes.kakascikova@gmail.com" class="text-xs text-zinc-500 hover:text-pink-500 transition-colors block">
+              vanes.kakascikova@gmail.com
             </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://www.facebook.com/kecypo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3 class="mb-6 text-2xl font-bold">Facebook</h3>
-              <i class="fab fa-facebook fa-3x"></i>
-              <p class="kp-section-text">fb.com/kecypo</p>
+            <a href="tel:+421915623269" class="text-xs text-zinc-500 hover:text-pink-500 transition-colors block">
+              +421 915 623 269
             </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://www.youtube.com/channel/UCI4diMxE8NeNbHvPApXRFlw"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3 class="mb-6 text-2xl font-bold">YouTube</h3>
-              <i class="fab fa-youtube fa-3x"></i>
-              <p class="kp-section-text">KECY PO</p>
-            </a>
-          </div>
-          <div class="flex-1">
-            <h3 class="mb-6 text-2xl font-bold">Kontakt na vedúcu</h3>
-            <p class="kp-section-text font-bold text-xl">Vanesa Kakaščíková</p>
-            <p class="kp-section-text text-gray-400">Vedúca campu</p>
-            <a href="mailto:vanes.kakascikova@gmail.com" class="block underline mt-2"
-              >vanes.kakascikova@gmail.com</a
-            >
-            <a href="tel:+421915623269" class="block underline"
-              >+421 915 623 269</a
-            >
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Partners Section -->
-    <div id="partners" class="bg-black pt-32 pb-8">
-      <div class="kp-container text-gray-100 md:text-center">
-        <h3 class="kp-section-header">Ďakujeme za podporu! 🙏</h3>
-        <p class="kp-section-text mb-12">
-          Bez týchto organizácií by sme camp nedokázali zrealizovať. 
-          Veľká vďaka za pomoc a dôveru! 😊
-        </p>
-        <div
-          class="mt-10 grid grid-cols-2 items-center justify-center gap-6 md:gap-12 lg:flex xl:gap-32"
-        >
-          <div class="flex-1">
-            <a
-              href="http://www.relevant.sk/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./src/static/logo/relevant.png"
-                alt="Logo Relevant n.o."
-                class="mx-auto w-36 brightness-0 invert filter hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://www.tckompas.sk/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./src/static/logo/tc-kompas.png"
-                alt="Logo TC Kompas"
-                class="mx-auto w-36 brightness-0 invert filter hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://www.josiahventure.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./src/static/logo/josiahventure.png"
-                alt="Logo JosiahVenture"
-                class="mx-auto w-36 brightness-0 invert filter hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://www.iuventa.sk/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./src/static/logo/iuventa.png"
-                alt="Logo Iuventa"
-                class="mx-auto w-36 brightness-0 invert filter hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div class="flex-1">
-            <a
-              href="https://patmos.sk/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="./src/static/logo/ecav.png"
-                alt="Logo ECAV"
-                class="mx-auto w-36 brightness-0 invert filter hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </a>
-          </div>
+    <section class="py-24 lg:py-32 bg-zinc-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-heading mb-6">
+            Big thanks! 🙏
+          </h2>
+          <p class="text-xl text-zinc-300">
+            Bez týchto organizácií by sme camp nedokázali zrealizovať. 
+            Veľká vďaka za support! 😊
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+          <a
+            href="http://www.relevant.sk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./src/static/logo/relevant.png"
+              alt="Logo Relevant n.o."
+              class="w-full h-auto opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+              loading="lazy"
+            />
+          </a>
+          
+          <a
+            href="https://www.tckompas.sk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./src/static/logo/tc-kompas.png"
+              alt="Logo TC Kompas"
+              class="w-full h-auto opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+              loading="lazy"
+            />
+          </a>
+          
+          <a
+            href="https://www.josiahventure.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./src/static/logo/josiahventure.png"
+              alt="Logo JosiahVenture"
+              class="w-full h-auto opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+              loading="lazy"
+            />
+          </a>
+          
+          <a
+            href="https://www.iuventa.sk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./src/static/logo/iuventa.png"
+              alt="Logo Iuventa"
+              class="w-full h-auto opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+              loading="lazy"
+            />
+          </a>
+          
+          <a
+            href="https://patmos.sk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="partner-logo"
+          >
+            <img
+              src="./src/static/logo/ecav.png"
+              alt="Logo ECAV"
+              class="w-full h-auto opacity-60 hover:opacity-100 transition-opacity filter brightness-0 invert"
+              loading="lazy"
+            />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <div class="bg-black pb-32 pt-10">
-      <div class="kp-container text-gray-100 md:text-center">
-        <div
-          class="mt-10 items-center gap-10 space-y-6 md:flex md:flex-wrap md:space-y-0"
-        >
-          <div class="flex-1">
-            <a href="#about" class="text-xl font-bold hover:text-kc-green transition-colors">Čo sú KECY?</a>
-          </div>
-          <div class="flex-1">
-            <a href="#aboutmore" class="text-xl font-bold hover:text-kc-green transition-colors">Prečo práve my</a>
-          </div>
-          <div class="flex-1">
-            <a href="#video" class="text-xl font-bold hover:text-kc-green transition-colors">Video & Galéria</a>
-          </div>
-          <div class="flex-1">
-            <a href="#tracks" class="text-xl font-bold hover:text-kc-green transition-colors">Tracky</a>
-          </div>
-          <div class="flex-1">
-            <a href="#info" class="text-xl font-bold hover:text-kc-green transition-colors">Info o campe</a>
-          </div>
-          <div class="flex-1">
-            <a href="#registration" class="text-xl font-bold hover:text-kc-green transition-colors">Registrácia</a>
-          </div>
-          <div class="flex-1">
-            <a href="#program" class="text-xl font-bold hover:text-kc-green transition-colors">Deň na campe</a>
-          </div>
-          <div class="flex-1">
-            <a href="#place" class="text-xl font-bold hover:text-kc-green transition-colors">Kde budeme</a>
-          </div>
-          <div class="flex-1">
-            <a href="#deeptalk" class="text-xl font-bold hover:text-kc-green transition-colors">Kto sme</a>
-          </div>
+    <footer class="py-12 bg-black border-t border-zinc-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Footer Navigation -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+          <a href="#about" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Čo sú KECY?</a>
+          <a href="#aboutmore" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Čím sme iní</a>
+          <a href="#video" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Galéria</a>
+          <a href="#tracks" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Tracky</a>
+          <a href="#info" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Info</a>
+          <a href="#registration" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Registrácia</a>
+          <a href="#program" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Program</a>
+          <a href="#place" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Lokalita</a>
+          <a href="#deeptalk" class="text-zinc-400 hover:text-pink-500 transition-colors text-sm">Kto sme</a>
         </div>
-        <p class="mt-10 text-center text-gray-400">
-          Za KECY Team PO vytvoril s 💜 Braňko v Prešove.<br/>
-          Všetky copyrighty sú ako inak naše! Cookies nezbierame. © 2025.
-        </p>
+        
+        <!-- Copyright -->
+        <div class="text-center pt-8 border-t border-zinc-800">
+          <p class="text-zinc-500 text-sm">
+            Za KECY Team PO vytvoril s 💜 Braňko v Prešove.<br/>
+            All rights reserved. No cookies tracking. © 2025.
+          </p>
+        </div>
       </div>
-    </div>
+    </footer>
 
-    <!-- Floating Menu Button -->
-    <div class="fixed bottom-10 right-10 z-50" id="div-button">
+    <!-- Back to Top Button -->
+    <div 
+      x-data="{ show: false }"
+      @scroll.window="show = window.scrollY > 300"
+      x-show="show"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 scale-90"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-90"
+      class="fixed bottom-8 right-8 z-40"
+      style="display: none;"
+    >
       <button
-        id="menu-button"
-        type="button"
-        onclick="location.href='#menu';"
-        class="bg-kc-blue text-gray-100 hover:bg-kc-green transition-colors shadow-2xl hover:shadow-kc-green/50"
-        style="width: 60px; height: 60px; border-radius: 50%;"
+        @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 text-white rounded-full shadow-2xl hover:shadow-pink-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        aria-label="Back to top"
       >
-        <i class="fas fa-bars fa-2x"></i>
+        <i class="fas fa-arrow-up group-hover:-translate-y-1 transition-transform"></i>
       </button>
     </div>
+
   </body>
 </html>
