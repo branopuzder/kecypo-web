@@ -663,40 +663,56 @@
           </h2>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="info-card">
-            <div class="text-5xl mb-4">📅</div>
-            <h3 class="text-xl font-bold mb-3 text-zinc-400">Kedy</h3>
-            <p class="text-2xl font-black text-gradient">20. - 26. júla</p>
-            <p class="text-zinc-500 mt-1">2025</p>
-          </div>
-          
-          <div class="info-card">
-            <div class="text-5xl mb-4">💰</div>
-            <h3 class="text-xl font-bold mb-3 text-zinc-400">Cena</h3>
-            <p class="text-2xl font-black text-gradient">209 €</p>
-            <div class="mt-3 text-sm text-zinc-400 space-y-1">
-              <p>Early bird: 209€ (do 21. 3.)</p>
-              <p>Štandard: 229€ (do 21. 5.)</p>
-              <p>Late: 249€ (do 30. 6.)</p>
-            </div>
-          </div>
-          
-          <div class="info-card">
-            <div class="text-5xl mb-4">📍</div>
-            <h3 class="text-xl font-bold mb-3 text-zinc-400">Kde</h3>
-            <p class="text-lg font-black text-white">Floriho chata</p>
-            <p class="text-zinc-500 mt-1">Mníchovský potok</p>
-          </div>
-          
-          <div class="info-card">
-            <div class="text-5xl mb-4">📝</div>
-            <h3 class="text-xl font-bold mb-3 text-zinc-400">Registrácia</h3>
-            <a href="#registration" class="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all duration-300 text-sm">
-              Poď do toho!
-            </a>
-            <p class="text-zinc-500 mt-3 text-sm">Otvorená do 30. 6.</p>
-          </div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Date -->
+      <div class="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:border-pink-500/30 hover:scale-105 transition-all duration-300">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="text-5xl">📅</div>
+          <h3 class="text-2xl font-bold text-zinc-300">Kedy</h3>
+        </div>
+        <p class="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+          20. - 26. júla
+        </p>
+        <p class="text-zinc-500 mt-2 text-lg">2025</p>
+      </div>
+      
+      <!-- Price -->
+      <div class="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:border-pink-500/30 hover:scale-105 transition-all duration-300">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="text-5xl">💰</div>
+          <h3 class="text-2xl font-bold text-zinc-300">Cena</h3>
+        </div>
+        <p class="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+          209 €
+        </p>
+        <div class="mt-4 text-sm text-zinc-400 space-y-1.5">
+          <p><span class="text-pink-500">•</span> Early bird: 209€ (do 21. 3.)</p>
+          <p><span class="text-purple-500">•</span> Standard: 229€ (do 21. 5.)</p>
+          <p><span class="text-cyan-500">•</span> Late: 249€ (do 30. 6.)</p>
+        </div>
+      </div>
+      
+      <!-- Location -->
+      <div class="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:border-pink-500/30 hover:scale-105 transition-all duration-300">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="text-5xl">📍</div>
+          <h3 class="text-2xl font-bold text-zinc-300">Kde</h3>
+        </div>
+        <p class="text-xl font-black text-white">Floriho chata</p>
+        <p class="text-zinc-400 mt-2">Mníchovský potok</p>
+      </div>
+      
+      <!-- Registration -->
+      <div class="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl p-6 hover:border-pink-500/30 hover:scale-105 transition-all duration-300">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="text-5xl">📝</div>
+          <h3 class="text-2xl font-bold text-zinc-300">Registrácia</h3>
+        </div>
+        <a href="#registration" class="block text-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all duration-300">
+          Poď do toho!
+        </a>
+        <p class="text-zinc-500 mt-3 text-sm text-center">Otvorená do 30. 6.</p>
+      </div>
         </div>
       </div>
     </section>
