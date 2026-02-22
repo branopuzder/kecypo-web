@@ -93,73 +93,88 @@
       </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img 
-          src="./src/static/img/camp/hero.jpg" 
-          alt="KECY Camp" 
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/40 to-zinc-950"></div>
-      </div>
+   <!-- Hero Section - Version 2: Separate Text Boxes -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="./src/static/img/camp/hero.jpg" 
+      alt="KECY Camp" 
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/40 to-zinc-950"></div>
+  </div>
+  
+  <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20 mix-blend-overlay animate-gradient"></div>
+  
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
+    <div>
+      <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase text-cyan-400 mb-4 animate-pulse">
+        English Summer Camp 2025
+      </p>
       
-      <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20 mix-blend-overlay animate-gradient"></div>
+      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+        <span class="block bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-gradient">
+          KECY Camp
+        </span>
+        <span class="block text-white text-3xl sm:text-5xl lg:text-6xl mt-2">
+          Prešov
+        </span>
+      </h1>
       
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
-        <div>
-          <p class="text-sm sm:text-base font-bold tracking-[0.3em] uppercase text-cyan-400 mb-4 animate-pulse">
-            English Summer Camp 2025
+      <!-- Two-line subtitle in separate styled boxes -->
+      <div class="max-w-4xl mx-auto space-y-3 mb-12">
+        <div class="inline-block px-8 py-4 bg-zinc-900/90 backdrop-blur-lg rounded-2xl border-2 border-zinc-700/50 shadow-2xl">
+          <p class="text-xl sm:text-2xl text-zinc-100 font-medium">
+            Letný camp, kde sa baví, učí a žije naplno.
           </p>
-          
-          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-            <span class="block bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-gradient">
-              KECY Camp
-            </span>
-            <span class="block text-white text-3xl sm:text-5xl lg:text-6xl mt-2">
-              Prešov
-            </span>
-          </h1>
-          
-          <p class="text-lg sm:text-2xl text-zinc-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Letný camp, kde sa baví, učí a žije naplno.<br/>
-            <span class="text-pink-500 font-semibold">Skvelí ľudia, real talk a brutálna atmoška. 🔥</span>
+        </div>
+        
+        <div class="inline-block px-8 py-4 bg-gradient-to-r from-pink-500/30 to-purple-500/30 backdrop-blur-lg rounded-2xl border-2 border-pink-500/50 shadow-[0_0_30px_rgba(236,72,153,0.3)]">
+          <p class="text-xl sm:text-2xl font-bold text-white">
+            Skvelí ľudia, real talk a brutálna atmoska. 🔥
           </p>
-          
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#registration" class="btn-primary text-lg group">
-              Chcem na camp!
-              <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform inline-block"></i>
-            </a>
-            <a href="#video" class="btn-secondary text-lg group">
-              <i class="fas fa-play mr-2 group-hover:scale-110 transition-transform inline-block"></i>
-              Pozri aftermovie
-            </a>
-          </div>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
-            <div class="glass-card p-6 text-center hover-lift">
-              <div class="text-3xl mb-2">📅</div>
-              <div class="font-bold text-lg">20. - 26. júla</div>
-              <div class="text-sm text-zinc-400">2025</div>
-            </div>
-            <div class="glass-card p-6 text-center hover-lift">
-              <div class="text-3xl mb-2">💰</div>
-              <div class="font-bold text-lg">od 209 €</div>
-              <div class="text-sm text-zinc-400">Early bird cena</div>
-            </div>
-            <div class="glass-card p-6 text-center hover-lift">
-              <div class="text-3xl mb-2">📍</div>
-              <div class="font-bold text-lg">Floriho chata</div>
-              <div class="text-sm text-zinc-400">Mníchovský potok</div>
-            </div>
-          </div>
         </div>
       </div>
       
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <i class="fas fa-chevron-down text-2xl text-white/50"></i>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#registration" class="btn-primary text-lg group">
+          Chcem na camp!
+          <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform inline-block"></i>
+        </a>
+        <a href="#video" class="btn-secondary text-lg group">
+          <i class="fas fa-play mr-2 group-hover:scale-110 transition-transform inline-block"></i>
+          Pozri aftermovie
+        </a>
       </div>
-    </section>
+      
+      <!-- Quick Info Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16 max-w-4xl mx-auto">
+        <div class="glass-card p-6 text-center hover-lift">
+          <div class="text-3xl mb-2">📅</div>
+          <div class="font-bold text-lg">20. - 26. júla</div>
+          <div class="text-sm text-zinc-400">2025</div>
+        </div>
+        <div class="glass-card p-6 text-center hover-lift">
+          <div class="text-3xl mb-2">💰</div>
+          <div class="font-bold text-lg">od 209 €</div>
+          <div class="text-sm text-zinc-400">Early bird cena</div>
+        </div>
+        <div class="glass-card p-6 text-center hover-lift">
+          <div class="text-3xl mb-2">📍</div>
+          <div class="font-bold text-lg">Floriho chata</div>
+          <div class="text-sm text-zinc-400">Mníchovský potok</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <i class="fas fa-chevron-down text-2xl text-white/50"></i>
+  </div>
+</section>
+
 
     <section id="about" class="py-24 lg:py-32 bg-zinc-950">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
