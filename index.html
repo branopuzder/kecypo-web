@@ -75,7 +75,7 @@
         "offers": {
           "@type": "Offer",
           "url": "https://www.kecypo.sk/#registration",
-          "price": "229",
+          "price": "249",
           "priceCurrency": "EUR",
           "availability": "https://schema.org/InStock",
           "validFrom": "2026-01-01"
@@ -101,7 +101,32 @@
     <script type="module" src="/src/main.js"></script>
   </head>
 
-  <body class="bg-zinc-950 text-white antialiased" x-data="{ menuOpen: false }">
+  <body
+    class="bg-zinc-950 text-white antialiased"
+    x-data="{ 
+  menuOpen: false,
+  currentPrice: '209 €',
+  priceLabel: 'Early bird cena',
+  checkPrice() {
+    const today = new Date();
+    // Nastavenie deadlinov (rok, mesiac 0-11, deň, hodina, minúta, sekunda)
+    const earlyBirdEnd = new Date('2026-04-23T23:59:59');
+    const standardEnd = new Date('2026-05-24T23:59:59');
+
+    if (today <= earlyBirdEnd) {
+      this.currentPrice = '209 €';
+      this.priceLabel = 'Early bird cena';
+    } else if (today <= standardEnd) {
+      this.currentPrice = '229 €';
+      this.priceLabel = 'Standard cena';
+    } else {
+      this.currentPrice = '249 €';
+      this.priceLabel = 'Late cena';
+    }
+  }
+}"
+    x-init="checkPrice()"
+  >
     <nav
       x-data="{ scrolled: false }"
       @scroll.window="scrolled = window.scrollY > 50"
@@ -297,8 +322,12 @@
               class="bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 rounded-2xl p-6 text-center hover:scale-105 hover:border-pink-500/50 transition-all duration-300"
             >
               <div class="text-4xl mb-3">💰</div>
-              <div class="font-bold text-xl text-white">od 209 €</div>
-              <div class="text-zinc-400 mt-1">Early bird cena</div>
+              <div class="font-bold text-xl text-white" x-text="currentPrice">
+                od 209 €
+              </div>
+              <div class="text-zinc-400 mt-1" x-text="priceLabel">
+                Early bird cena
+              </div>
             </div>
             <div
               class="bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 rounded-2xl p-6 text-center hover:scale-105 hover:border-pink-500/50 transition-all duration-300"
@@ -1045,19 +1074,28 @@
             </div>
             <p
               class="text-2xl font-black bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent"
+              x-text="currentPrice"
             >
-              229 €
+              209 €
             </p>
             <div class="mt-4 text-sm text-zinc-400 space-y-1.5">
-              <p>
+              <p
+                :class="priceLabel === 'Early bird cena' ? 'text-white font-bold' : 'opacity-50'"
+              >
                 <span class="text-pink-500">•</span> Early bird: 209€ (do 23.
                 4.)
               </p>
-              <p>
+              <p
+                :class="priceLabel === 'Standard cena' ? 'text-white font-bold' : 'opacity-50'"
+              >
                 <span class="text-purple-500">•</span> Standard: 229€ (do 24.
                 5.)
               </p>
-              <p><span class="text-cyan-500">•</span> Late: 249€ (do 25. 6.)</p>
+              <p
+                :class="priceLabel === 'Late cena' ? 'text-white font-bold' : 'opacity-50'"
+              >
+                <span class="text-cyan-500">•</span> Late: 249€ (do 25. 6.)
+              </p>
             </div>
           </div>
 
