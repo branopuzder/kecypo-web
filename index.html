@@ -605,6 +605,27 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
           <a
+            href="https://photos.app.goo.gl/PcQrGJLoHTnArkWz8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="gallery-item group"
+          >
+            <img
+              src="./src/static/img/camp/g-2026.jpg"
+              alt="Galéria KECY Camp 2026"
+              class="w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <div class="text-center">
+                <div class="text-sm font-bold uppercase tracking-wider mb-1">
+                  Outside the Box
+                </div>
+                <div class="text-2xl font-black">2026</div>
+              </div>
+            </div>
+          </a>
+          <a
             href="https://photos.app.goo.gl/HGQ6x6fAbztuZnBv7"
             target="_blank"
             rel="noopener noreferrer"
@@ -668,7 +689,16 @@
               </div>
             </div>
           </a>
+        </div>
 
+        <div
+          x-show="showAllGalleries"
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 -translate-y-4"
+          x-transition:enter-end="opacity-100 translate-y-0"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8"
+          style="display: none"
+        >
           <a
             href="https://photos.app.goo.gl/FeYBrU3srL8y71Xi9"
             target="_blank"
@@ -690,16 +720,7 @@
               </div>
             </div>
           </a>
-        </div>
 
-        <div
-          x-show="showAllGalleries"
-          x-transition:enter="transition ease-out duration-500"
-          x-transition:enter-start="opacity-0 -translate-y-4"
-          x-transition:enter-end="opacity-100 translate-y-0"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8"
-          style="display: none"
-        >
           <a
             href="https://photos.app.goo.gl/7qEG9oyH35JSs14Q9"
             target="_blank"
@@ -891,9 +912,9 @@
             ></i>
           </button>
           <p class="text-zinc-400 mt-4 text-sm">
-            <span x-show="!showAllGalleries">Zobrazené 4 z 12 galérií</span>
+            <span x-show="!showAllGalleries">Zobrazené 4 z 13 galérií</span>
             <span x-show="showAllGalleries" style="display: none"
-              >Všetkých 12 galérií</span
+              >Všetkých 13 galérií</span
             >
           </p>
         </div>
@@ -906,7 +927,7 @@
             <div class="text-sm text-zinc-400">Rokov campu</div>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-black text-purple-500 mb-2">11+</div>
+            <div class="text-4xl font-black text-purple-500 mb-2">12+</div>
             <div class="text-sm text-zinc-400">Fotogalérií</div>
           </div>
           <div class="text-center">
